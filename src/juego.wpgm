@@ -1,8 +1,14 @@
 import wollok.game.*
-import pepita.*
+import screenManagement.*
+import Sonidos.*
+import teclado.*
+ 
+program land_thio{
 
-program juego {
-	game.title("Juego Base")
-	game.addVisual(pepita)
+	game.title("land.io")	
+	screenManagement.configurarInicio()
+	screenManagement.configuarMenuInicial()
+	sonido.configInicio()
+	teclado.configInicio()
 	game.start()
 }
