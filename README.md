@@ -2,9 +2,11 @@
 
 ## Equipo de desarrollo
 
-- Alguien
-- Persona
-- etc.
+- Candela Nieva
+- Agustin Gabriel Podhainy
+- Bautista Torre Vanoni
+- Milagros Marchese
+- Thiago Martin Gonzalez
 
 ## Capturas
 
@@ -17,6 +19,6 @@
 
 ## Otros
 
-- Curso/Facultad
+- UTN FRBA K2004
 - Versión de wollok
-- Una vez terminado, no tenemos problemas en que el repositorio sea público / queremos manternerlo privado
+- Una vez terminado, no tenemos problemas en que el repositorio sea público
