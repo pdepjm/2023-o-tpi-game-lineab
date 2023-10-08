@@ -1,4 +1,4 @@
-# Nombre del juego (<- borrar y completar)
+# Land.io
 
 ## Equipo de desarrollo
 
