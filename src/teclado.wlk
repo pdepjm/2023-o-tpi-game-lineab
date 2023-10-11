@@ -32,3 +32,4 @@ object teclado {
 	keyboard.enter().onPressDo({sonido.accionarInicio() managerMenuFinal.accionar()})
 	}
 }
+//jgdn

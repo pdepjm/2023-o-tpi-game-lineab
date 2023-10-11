@@ -48,3 +48,4 @@ object managerMenuInicio{
 		sonido.configInicio()
 	}
 }
+//nhrf

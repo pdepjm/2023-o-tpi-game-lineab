@@ -27,5 +27,5 @@ object tutoriales {
 	method image() = "tutorial"+ menuInstrucciones.modo().toString()+self.x().toString() +".png"
 	method transicion() {game.onTick(1000,"transicion",{x = x + 1})}
 }
-
+hdfh
 */
