@@ -45,7 +45,7 @@ object managerMenuInicio{
 	method mostrarInstrucciones(){
 		screenManagement.configInstrucciones()
 		teclado.configInstrucciones()
-		sonido.configInicio()
+		sonido.configInstrucciones()
 	}
 }
 //nhr
