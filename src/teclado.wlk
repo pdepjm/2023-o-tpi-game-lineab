@@ -4,6 +4,8 @@ import menuSelect.*
 import players.*
 import direcciones.*
 import menuFinalPartida.*
+import menuInstrucciones.*
+import screenManagement.*
 
 object teclado {
 	method configInicio(){
@@ -11,7 +13,11 @@ object teclado {
 	keyboard.down().onPressDo({sonido.switchMenu() menuSelect.sumarSeleccionado(1)})
 	keyboard.enter().onPressDo({sonido.accionarInicio() managerMenuInicio.accionar()})
 	}
-	
+	method configInstrucciones(){
+	keyboard.left().onPressDo({sonido.switchMenu() menuInstrucciones.sumarSeleccionado(2)})
+	keyboard.right().onPressDo({sonido.switchMenu() menuInstrucciones.sumarSeleccionado(1)})
+	keyboard.enter().onPressDo({managerMenuFinal.volverAlMenu()})
+	}
 	method configPartida(){
 	keyboard.up().onPressDo({jugadorRojo.mirar(norte)})
 	keyboard.down().onPressDo({jugadorRojo.mirar(sur)})

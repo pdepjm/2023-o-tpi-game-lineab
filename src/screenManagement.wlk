@@ -3,7 +3,7 @@ import menuSelect.*
 import players.*
 import reloj.*
 import menuFinalPartida.*
-
+import menuInstrucciones.*
 object screenManagement {
 	method configurarInicio(){
 	game.width(80)
@@ -44,6 +44,14 @@ object screenManagement {
 		})
 	}
 	
+	method configInstrucciones(){
+		game.clear()
+	game.addVisual(menuInstrucciones)
+	// PARA LA SECUENCIA DE IMAGENES DENTRO DE LAS INTRUCCIONES
+	//tutoriales.transicion()
+	//game.addVisual(tutoriales)
+	}
+
 	method cerrarJuego(){
 		game.clear()
 		game.width(1)
@@ -116,6 +124,29 @@ object marcoFondo {
 	method image() = "marcoPartida_" + reloj.color() + ".png" //el marco del reloj esta incluido en el marco violeta, por eso depende del color del reloj
 	method position() = game.at(0,0)
 }
+
+/// menu instrucciones
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //FINAL PARTIDA
 

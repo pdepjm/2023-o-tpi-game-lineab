@@ -41,5 +41,10 @@ object managerMenuInicio{
 	}
 	
 	method mostrarCreditos(){}
-	method mostrarInstrucciones(){}
+	
+	method mostrarInstrucciones(){
+		screenManagement.configInstrucciones()
+		teclado.configInstrucciones()
+		sonido.configInicio()
+	}
 }
