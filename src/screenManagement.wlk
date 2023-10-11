@@ -75,7 +75,7 @@ object screenManagement {
   
 
 //JUEGO CERRADO
-//nhdfnh
+//nhdfn
 object fondoNegro{
 	method image() = "fondoNegro.png"
 	
