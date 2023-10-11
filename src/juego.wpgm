@@ -12,4 +12,3 @@ program land_thio{
 	teclado.configInicio()
 	game.start()
 }
-//hfdxcn
