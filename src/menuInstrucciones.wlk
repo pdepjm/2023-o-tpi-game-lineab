@@ -17,9 +17,16 @@ object menuInstrucciones {
 	}
 	
 	method image() = "MenuInstrucciones" + self.modo().toString() +".png"
+	
+	method volverAlMenu(){
+		    
+			screenManagement.configuarMenuInicial()
+	        sonido.configInicio()
+	        teclado.configInicio()
+		}
 }
 
-/* PARA LA SECUENCIA DE IMAGENES DENTRO DE LAS INSTRUCCIONES, FALTAN IMAGENES FORMATO : tutorial+numero de imagen de instrucciones+numero de imagen de tutorial+.png
+/* PARA LA SECUENCIA DE IMAGENES DENTRO DE LAS INSTRUCCIONES, FALTAN IMAGENES FORMATO : tutorial+numero de imagen de instrucciones+numero de imagen de tutorial+.png , Y TAMBIEN CALCULAR LAS POSICIONES
 object tutoriales {
 	var x = 0
 	

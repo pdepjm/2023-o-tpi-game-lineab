@@ -125,27 +125,6 @@ object marcoFondo {
 	method position() = game.at(0,0)
 }
 
-/// menu instrucciones
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //FINAL PARTIDA
