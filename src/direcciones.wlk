@@ -15,6 +15,7 @@ object sur {
 	method desplazar(jugador){  //no es error
 		if(jugador.position().y() > 2) jugador.moverSur()
 	}	
+	
 	method opuesto() = norte	
 }
 
@@ -22,6 +23,7 @@ object este {
 	method desplazar(jugador){
 		if(jugador.position().x() < 77) jugador.moverEste()
 	}	
+	
 	method opuesto() = oeste	
 }
 
@@ -29,10 +31,12 @@ object oeste {
 	method desplazar(jugador){
 		if(jugador.position().x() > 2) jugador.moverOeste()
 	}	
+	
 	method opuesto() = este	
 }
 
 object quieto {
 		method desplazar(jugador){}
+		
 		method opuesto() = self   //quieto no tiene opuesto 		
 }
