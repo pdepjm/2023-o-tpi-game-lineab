@@ -17,6 +17,10 @@ object menuInstrucciones {
 	}
 	
 	method image() = "MenuInstrucciones" + self.modo().toString() +".png"
+	method volverAlMenu() {
+		throw new Exception(message = "implementar este metodo xd   -tom")
+	}
+	
 }
 
 /* PARA LA SECUENCIA DE IMAGENES DENTRO DE LAS INSTRUCCIONES, FALTAN IMAGENES FORMATO : tutorial+numero de imagen de instrucciones+numero de imagen de tutorial+.png
