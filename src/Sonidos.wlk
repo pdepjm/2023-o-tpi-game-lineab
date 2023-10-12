@@ -6,9 +6,9 @@ object sonido{
     var musicaPrincipioPartida
     var musicaFinalPartida
     var musicaMenuFinal
-    var musicaInstrucciones
+
 //MENU INICIO
-    
+
 	method configInicio(){
 		musicaInicio = game.sound("musicaMenuInicio.mp3")
 		game.sound("switchMenu.mp3").volume(0.60)
@@ -69,14 +69,6 @@ object sonido{
 	
 	method stopMusicaMenuFinal(){
 		musicaMenuFinal.stop()
-	}
-	/// Instrucciones
-	method configInstrucciones(){
-		musicaInstrucciones = game.sound("musicaInstrucciones.mp3")
-		game.sound("switchMenu.mp3").volume(0.60)
-        musicaInstrucciones.volume(0.5)
-        game.schedule(500,{musicaInstrucciones.play()})
-        game.schedule(501,{musicaInstrucciones.shouldLoop(true)})
 	}
 }
 	

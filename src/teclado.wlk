@@ -16,7 +16,7 @@ object teclado {
 	method configInstrucciones(){
 	keyboard.left().onPressDo({sonido.switchMenu() menuInstrucciones.sumarSeleccionado(2)})
 	keyboard.right().onPressDo({sonido.switchMenu() menuInstrucciones.sumarSeleccionado(1)})
-	keyboard.enter().onPressDo({menuInstrucciones.volverAlMenu() })
+	keyboard.enter().onPressDo({managerMenuFinal.volverAlMenu()})
 	}
 	method configPartida(){
 	keyboard.up().onPressDo({jugadorRojo.mirar(norte)})
