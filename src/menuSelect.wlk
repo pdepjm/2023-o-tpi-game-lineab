@@ -34,7 +34,7 @@ object managerMenuInicio{
 	}
 	
 	method iniciarPartida(){
-		screenManagement.configPartida() //Falta el conteo
+		screenManagement.configPartida()
 		sonido.iniciarPartida()
 		teclado.configPartida() 
 		reloj.iniciarContador() 
@@ -48,4 +48,3 @@ object managerMenuInicio{
 		sonido.configInstrucciones()
 	}
 }
-//nhr

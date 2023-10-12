@@ -45,7 +45,7 @@ object screenManagement {
 	}
 	
 	method configInstrucciones(){
-		game.clear()
+	game.clear()
 	game.addVisual(menuInstrucciones)
 	// PARA LA SECUENCIA DE IMAGENES DENTRO DE LAS INTRUCCIONES
 	//tutoriales.transicion()
@@ -75,7 +75,7 @@ object screenManagement {
   
 
 //JUEGO CERRADO
-//nhdfn
+
 object fondoNegro{
 	method image() = "fondoNegro.png"
 	
@@ -125,7 +125,7 @@ object marcoFondo {
 	method position() = game.at(0,0)
 }
 
-/// menu instrucciones
+//MENU INSTRUCCIONES
 
 
 
