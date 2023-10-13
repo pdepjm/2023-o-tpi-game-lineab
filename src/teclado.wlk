@@ -5,6 +5,7 @@ import players.*
 import direcciones.*
 import menuFinalPartida.*
 import menuInstrucciones.*
+import menuCreditos.*
 import screenManagement.*
 
 object teclado {
@@ -16,6 +17,9 @@ object teclado {
 	method configInstrucciones(){
 	keyboard.left().onPressDo({sonido.switchMenu() menuInstrucciones.sumarSeleccionado(2)})
 	keyboard.right().onPressDo({sonido.switchMenu() menuInstrucciones.sumarSeleccionado(1)})
+	keyboard.enter().onPressDo({menuInstrucciones.volverAlMenu() })
+	}
+	method configCreditos(){
 	keyboard.enter().onPressDo({menuInstrucciones.volverAlMenu() })
 	}
 	method configPartida(){
