@@ -4,6 +4,7 @@ import players.*
 import reloj.*
 import menuFinalPartida.*
 import menuInstrucciones.*
+import menuCrerditos.*
 object screenManagement {
 	method configurarInicio(){
 	game.width(80)
@@ -50,6 +51,11 @@ object screenManagement {
 	// PARA LA SECUENCIA DE IMAGENES DENTRO DE LAS INTRUCCIONES
 	//tutoriales.transicion()
 	//game.addVisual(tutoriales)
+	}
+
+	method configCreditos(){
+	game.clear()
+	game.addVisual(menuCreditos)
 	}
 
 	method cerrarJuego(){
