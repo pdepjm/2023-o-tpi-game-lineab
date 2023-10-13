@@ -40,7 +40,11 @@ object managerMenuInicio{
 		reloj.iniciarContador() 
 	}
 	
-	method mostrarCreditos(){}
+	method mostrarCreditos(){
+		screenManagement.configCreditos()
+		teclado.configCreditos()
+		sonido.configCreditos()
+	}
 	
 	method mostrarInstrucciones(){
 		screenManagement.configInstrucciones()
