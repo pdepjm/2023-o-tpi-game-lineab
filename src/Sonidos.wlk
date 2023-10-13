@@ -7,6 +7,7 @@ object sonido{
     var musicaFinalPartida
     var musicaMenuFinal
     var musicaInstrucciones
+    var musicaCreditos
     
     //MENU INICIO
     
