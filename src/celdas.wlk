@@ -17,7 +17,7 @@ class Celda{
 
 object celdasManager{
 	var i = 5
-	var j = 5
+	var j = 4
 	
 		
 	method inicializarCeldas(){
@@ -25,12 +25,12 @@ object celdasManager{
 	}
 	
 	method crearCeldas(){	
-		if(i<=25){//38
-			if(j<=20){//17
+		if(i<=38){//38
+			if(j<=15){//17
 				self.agregarCelda(new Celda(posX = i, posY = j))
 				j += 1
 			}else{
-			j = 5
+			j = 4
 			i += 1
 			self.agregarCelda(new Celda(posX = i, posY = j))
 			}

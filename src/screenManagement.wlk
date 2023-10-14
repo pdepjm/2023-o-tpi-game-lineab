@@ -23,7 +23,7 @@ object screenManagement {
 	}
 	
 	method configPartida(){
-	//celdasManager.inicializarCeldas()
+	celdasManager.inicializarCeldas()
 	game.addVisual(jugadorRojo)
 	game.addVisual(marcoFondo)
 	game.addVisual(minutero1)
@@ -33,7 +33,6 @@ object screenManagement {
 	game.addVisual(logoMenu)
 	game.addVisual(contadorInicio)
 	contadorInicio.iniciar()
-	game.onCollideDo(jugadorRojo ,{ celda => celda.desaparecer()})
 	
 	game.schedule(3000,{
 		game.removeVisual(contadorInicio)
