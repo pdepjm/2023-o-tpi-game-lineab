@@ -6,7 +6,7 @@ import celdas.*
 const jugadores = [jugadorRojo]
 
 object jugadorRojo{
-	var property position = game.at(2,2)
+	var property position = game.at(6,6)
 	var property mira = quieto 
 	var image = "enojado.jpg"
 	var puedeMoverse = false

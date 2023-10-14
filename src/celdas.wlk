@@ -16,7 +16,7 @@ class Celda{
      
 
     method cambiarColor(_duenio){
-    	image = "celda_" + _duenio.toSting() + ".png"
+    	image = "celda_" + _duenio.toString() + ".png"
     }   
 
  
@@ -49,13 +49,16 @@ object celdasManager{
     }
     }
 
+//54 55 56 57 58 59 510 511 512 513 514 515 64
 
     method agregarCelda(celda){
         celdas.add(celda)
-       // game.addVisual(celda)
+        game.addVisual(celda)
     }
 
-    method celda(posX, posY) = celdas.get(posY * 11 + posX - 5)
+
+//(5.4)     
+    method celda(posX, posY) = celdas.get(12 * posX + posY - 64)
 }
 
 //2
