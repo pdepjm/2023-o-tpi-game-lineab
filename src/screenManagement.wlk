@@ -33,7 +33,8 @@ object screenManagement {
 	game.addVisual(logoMenu)
 	game.addVisual(contadorInicio)
 	contadorInicio.iniciar()
-	game.onCollideDo(jugadorRojo ,{ celda => celda.desaparecer()})
+	game.onTick(500,"Animacion jugadores",{jugadores.forEach{jugador=>jugador.cambiarImagen()}})
+	game.onCollideDo(jugadorRojo ,{ celda => celda.cambiarColor(jugadorRojo)})
 	
 	game.schedule(3000,{
 		game.removeVisual(contadorInicio)

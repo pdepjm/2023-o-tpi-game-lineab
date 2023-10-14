@@ -7,9 +7,11 @@ const jugadores = [jugadorRojo]
 object jugadorRojo{
 	var property position = game.at(2,2)
 	var property mira = quieto 
+	var image = "enojado.jpg"
 	var puedeMoverse = false
 	
-	method image() = "jugadorRojo.png" 
+	method cuello() = "cuelloRojo30.png"
+	method image() = image
 	
 	method puedeMoverse(_puedeMoverse){
 		puedeMoverse = _puedeMoverse
@@ -41,5 +43,11 @@ object jugadorRojo{
 			sonido.movimientoGiro()
 		}
 	}
+	
+	method cambiarImagen(){
+		const imagenes = ["enojado.jpg", "feliz.jpg"]
+		image = imagenes.anyOne()
+	}
 }
+
 	

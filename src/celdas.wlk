@@ -6,12 +6,16 @@ const celdas = []
 class Celda{
 	const posX
 	const posY
-	
+	var image = "fondo.png"
 	method position() = game.at(posX, posY)
-    method image() = "cuelloRojo30.png"
+    method image() = image
     
     method desaparecer(){
     	game.removeVisual(self)
+    }
+    
+    method cambiarColor(jugador){
+    	image= jugador.cuello()
     }
 }
 
@@ -25,8 +29,8 @@ object celdasManager{
 	}
 	
 	method crearCeldas(){	
-		if(i<=25){//38
-			if(j<=20){//17
+		if(i<=38){//38
+			if(j<=15){//17
 				self.agregarCelda(new Celda(posX = i, posY = j))
 				j += 1
 			}else{
