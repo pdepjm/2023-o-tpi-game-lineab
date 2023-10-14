@@ -33,7 +33,6 @@ object screenManagement {
 	game.addVisual(logoMenu)
 	game.addVisual(contadorInicio)
 	contadorInicio.iniciar()
-	game.onCollideDo(jugadorRojo ,{ celda => celda.cambiarColor(jugadorRojo)})
 	game.onTick(500, "Animacion Jugador", {jugadorRojo.cambiarImagen()})
 	game.schedule(3000,{
 		game.removeVisual(contadorInicio)
@@ -41,7 +40,7 @@ object screenManagement {
 		game.addVisual(goInicio)
 		game.schedule(1000, {game.removeVisual(goInicio)})
 		jugadores.forEach({jugador => jugador.puedeMoverse(true)})
-		game.onTick(200,"Mover a los Jugadores", {jugadores.forEach({jugador => jugador.mover()})})
+		game.onTick(200,"Mover a los Jugadores", {jugadores.forEach({jugador => jugador.moverYAccionarCelda()})})
 		game.onTick(1000, "Actualizar Reloj", {reloj.avanzarTiempo()})
 		})
 	}
@@ -130,7 +129,7 @@ object logoMenu {
 
 object marcoFondo {
 	method image() = "marcoPartida_" + reloj.color() + ".png" //el marco del reloj esta incluido en el marco violeta, por eso depende del color del reloj
-	method position() = game.at(0,0)
+	method position() = game.at(4,3)
 }
 
 //MENU INSTRUCCIONES

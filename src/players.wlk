@@ -1,6 +1,7 @@
 import wollok.game.*
 import direcciones.*
 import Sonidos.*
+import celdas.*
 
 const jugadores = [jugadorRojo]
 
@@ -19,8 +20,9 @@ object jugadorRojo{
 		
 	method cambiarMira(direc){mira = direc}
 	
-	method mover(){
-		mira.desplazar(self)
+	method moverYAccionarCelda(){
+	  celdasManager.celda(self.position().x(), self.position().y()).cambiarColor(self)
+	  mira.desplazar(self)
 	}
 	
 	method moverNorte() {
