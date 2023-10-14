@@ -5,13 +5,14 @@ import reloj.*
 import menuFinalPartida.*
 import menuInstrucciones.*
 import menuCreditos.*
+import celdas.*
 
 object screenManagement {
 	method configurarInicio(){
-	game.width(80)
-	game.height(35)
-	game.cellSize(20)
-	game.boardGround("fondoCeldas.png")
+	game.width(45)
+	game.height(20)
+	game.cellSize(40)
+	game.boardGround("fondoCeldas30.png")
 	}
 	
 	method configuarMenuInicial(){
@@ -22,9 +23,7 @@ object screenManagement {
 	}
 	
 	method configPartida(){
-
-	game.clear()
-	
+	//celdasManager.inicializarCeldas()
 	game.addVisual(jugadorRojo)
 	game.addVisual(marcoFondo)
 	game.addVisual(minutero1)
@@ -34,6 +33,7 @@ object screenManagement {
 	game.addVisual(logoMenu)
 	game.addVisual(contadorInicio)
 	contadorInicio.iniciar()
+	game.onCollideDo(jugadorRojo ,{ celda => celda.desaparecer()})
 	
 	game.schedule(3000,{
 		game.removeVisual(contadorInicio)

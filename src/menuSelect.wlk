@@ -3,6 +3,7 @@ import screenManagement.*
 import Sonidos.*
 import teclado.*
 import reloj.*
+import celdas.*
 
 object menuSelect{
 	var seleccionado = 0
@@ -29,7 +30,8 @@ object managerMenuInicio{
 		}else if(menuSelect.modo() == 1){
 			self.mostrarInstrucciones()
 		}else{
-			self.iniciarPartida()
+			game.clear()
+			celdasManager.inicializarCeldas()
 		}
 	}
 	
