@@ -49,5 +49,3 @@ object jugadorRojo{
 		image = imagenes.anyOne()
 	}
 }
-
-	

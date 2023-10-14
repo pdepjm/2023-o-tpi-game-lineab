@@ -6,7 +6,8 @@ const celdas = []
 class Celda{
 	const posX
 	const posY
-	var image = "fondo.png"
+	var image = "invisible.jpeg"
+	
 	method position() = game.at(posX, posY)
     method image() = image
     
@@ -21,7 +22,7 @@ class Celda{
 
 object celdasManager{
 	var i = 5
-	var j = 5
+	var j = 4
 	
 		
 	method inicializarCeldas(){
@@ -34,7 +35,7 @@ object celdasManager{
 				self.agregarCelda(new Celda(posX = i, posY = j))
 				j += 1
 			}else{
-			j = 5
+			j = 4
 			i += 1
 			self.agregarCelda(new Celda(posX = i, posY = j))
 			}
