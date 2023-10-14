@@ -79,10 +79,12 @@ object sonido{
 		musicaInstrucciones = game.sound("musicaInstrucciones.mp3")
 		game.sound("switchMenu.mp3").volume(0.60)
         musicaInstrucciones.volume(0.5)
-        game.schedule(500,{musicaInstrucciones.play()})
-        game.schedule(501,{musicaInstrucciones.shouldLoop(true)})
+        musicaInstrucciones.play()
+        musicaInstrucciones.shouldLoop(true)
 	}
+	
 	// CREDITOS
+	
 method configCreditos(){
 		musicaCreditos = game.sound("musicaCreditos.mp3")
 		game.sound("switchMenu.mp3").volume(0.60)

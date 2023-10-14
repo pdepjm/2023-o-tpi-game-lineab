@@ -8,7 +8,9 @@ object menuInstrucciones {
 	var seleccionado = 0
 	const property position = game.at(0,0)
 	
-	method seleccionado() = seleccionado
+	method reiniciarSeleccionado(){
+		seleccionado = 0
+	}
 	
 	method modo() = seleccionado%3
 	
@@ -17,8 +19,11 @@ object menuInstrucciones {
 	}
 	
 	method image() = "MenuInstrucciones" + self.modo().toString() +".png"
+	
 	method volverAlMenu() {
-		throw new Exception(message = "implementar este metodo xd   -tom")
+		screenManagement.configuarMenuInicial()
+		sonido.configInicio()
+		teclado.configInicio()
 	}
 	
 }
