@@ -6,6 +6,7 @@ import menuFinalPartida.*
 import menuInstrucciones.*
 import menuCreditos.*
 import celdas.*
+import spawns.*
 
 object screenManagement {
 	method configurarInicio(){
@@ -23,8 +24,8 @@ object screenManagement {
 	}
 	
 	method configPartida(){
-	celdasManager.inicializarCeldas()
-	game.addVisual(jugadorRojo)
+	spawnsManager.inicializarSpawns()
+	jugadores.forEach({jugador => spawns.anyOne().aparecerJugador(jugador)})
 	game.addVisual(marcoFondo)
 	game.addVisual(minutero1)
 	game.addVisual(minutero2)

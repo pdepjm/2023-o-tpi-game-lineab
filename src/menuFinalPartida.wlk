@@ -3,6 +3,7 @@ import screenManagement.*
 import Sonidos.*
 import teclado.*
 import reloj.*
+import celdas.*
 
 object menuFinalSelect{
 	var seleccionado = 0
@@ -33,10 +34,8 @@ object managerMenuFinal{
 		}
 		
 		method reiniciarPartida(){
-			screenManagement.configPartida()
-			sonido.iniciarPartida()
-			teclado.configPartida()
-			reloj.iniciarContador()
+			game.clear()
+			celdasManager.inicializarPartida()
 		}
 		
 		method volverAlMenu(){

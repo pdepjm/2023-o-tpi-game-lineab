@@ -31,7 +31,7 @@ object managerMenuInicio{
 			self.mostrarInstrucciones()
 		}else{
 			game.clear()
-			celdasManager.inicializarCeldas()
+			celdasManager.inicializarPartida()
 		}
 	}
 	

@@ -15,13 +15,16 @@ class Celda{
     method position() = game.at(posX, posY)
      
 
-    method cambiarColor(_duenio){
-    	image = "celda_" + _duenio.toString() + ".png"
+    method cambiarColor(jugador){
+    	image = "celda_robada_" + jugador.toString() + ".png"
     }   
 
  
-    method desaparecer(){
-        game.removeVisual(self)
+    method cambiarDuenio(jugador){
+    	//duenio.perderCelda(self)
+    	duenio = jugador
+    	//duenio.agregarCelda(self)
+        image = "celda_" + jugador.toString() + ".png"
     }
 }
 
@@ -30,7 +33,8 @@ object celdasManager{
     var j = 4
 
 
-    method inicializarCeldas(){
+    method inicializarPartida(){
+    celdas.clear() //por si se reinicia la partida
     game.onTick(1,"Inicializando Celdas",{self.crearCeldas()})
     }
 
@@ -44,7 +48,9 @@ object celdasManager{
             i += 1
             }
         }else{
-        game.removeTickEvent("Inicializando Celdas") 
+        game.removeTickEvent("Inicializando Celdas")
+        i = 5 //Reinicia los contadores para cuando se reinicia la partida
+        j = 4
         managerMenuInicio.iniciarPartida()
     }
     }
