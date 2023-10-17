@@ -7,6 +7,7 @@ import menuInstrucciones.*
 import menuCreditos.*
 import celdas.*
 import spawns.*
+import ranking.*
 
 object screenManagement {
 	method configurarInicio(){
@@ -33,6 +34,11 @@ object screenManagement {
 	game.addVisual(segundero2)
 	game.addVisual(logoMenu)
 	game.addVisual(contadorInicio)
+	/* 
+	game.addVisual(digito1R)
+	game.addVisual(digito2R)
+	game.addVisual(digito3R)
+	game.addVisual(digito4R)*/
 	contadorInicio.iniciar()
 	game.onTick(500, "Animacion Jugador", {jugadorRojo.cambiarImagen()})
 	game.schedule(3000,{

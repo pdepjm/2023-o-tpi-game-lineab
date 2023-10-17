@@ -7,7 +7,7 @@ class Celda{
     const posX
     const posY
     
-    var duenio = "neutral"
+    var property duenio = "neutral"
     var estanRobando = 0 
     var ladron = "nadie"
     var property image = "celda_neutral.png"
