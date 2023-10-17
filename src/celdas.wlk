@@ -7,24 +7,50 @@ class Celda{
     const posX
     const posY
     
-    var property duenio = "neutral"
-    var estanRobando = 0 
-    var ladron = "nadie"
+    var property duenio = neutral
+    var estanRobando = false 
+    var ladron = neutral
     var property image = "celda_neutral.png"
 
     method position() = game.at(posX, posY)
      
+    method estanRobando(_valor){
+    	estanRobando = _valor
+    } 
 
-    method cambiarColor(jugador){
-    	image = "celda_robada_" + jugador.toString() + ".png"
+    method interactuarCelda(jugador){
+    	if(estanRobando){
+    		if(ladron == jugador){
+    			jugador.suicidarse()
+    		}else{
+    			//matas
+    		}
+    	}else{
+    		if(duenio != jugador){
+    			estanRobando = true
+    			ladron = jugador
+    			image = "celda_robada_" + jugador.toString() + ".png"
+    			jugador.agregarCuello(self)
+    		}else{
+    			jugador.adueniarseCuello()
+    			//rellenar
+    		
+    		}
+    	}
     }   
 
  
     method cambiarDuenio(jugador){
-    	//duenio.perderCelda(self)
+    	duenio.perderCelda(self)
     	duenio = jugador
-    	//duenio.agregarCelda(self)
-        image = "celda_" + jugador.toString() + ".png"
+    	duenio.agregarCelda(self)
+        self.desrobar()
+    }
+    
+    method desrobar(){
+    	ladron = neutral
+    	estanRobando = false
+    	image = "celda_" + duenio.toString() + ".png"
     }
 }
 
@@ -65,6 +91,12 @@ object celdasManager{
 
 //(5.4)     
     method celda(posX, posY) = celdas.get(12 * posX + posY - 64)
+}
+
+object neutral{
+	method perderCelda(celda){}
+	
+	method agregarCelda(){}
 }
 
 //2

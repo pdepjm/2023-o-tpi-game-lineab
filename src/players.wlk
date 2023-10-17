@@ -2,6 +2,7 @@ import wollok.game.*
 import direcciones.*
 import Sonidos.*
 import celdas.*
+import spawns.*
 
 const jugadores = [jugadorRojo]
 
@@ -10,8 +11,11 @@ object jugadorRojo{
 	var property mira = quieto 
 	var image = "enojado.jpg"
 	var puedeMoverse = false
+	const cuello = []
+	var terreno = []
 	
-	method cuello() = "cuelloRojo30.png"
+	//MOVIMIENTOS
+	
 	method image() = image
 	
 	method puedeMoverse(_puedeMoverse){
@@ -21,8 +25,8 @@ object jugadorRojo{
 	method cambiarMira(direc){mira = direc}
 	
 	method moverYAccionarCelda(){
-	  celdasManager.celda(self.position().x(), self.position().y()).cambiarColor(self)
 	  mira.desplazar(self)
+	  celdasManager.celda(self.position().x(), self.position().y()).interactuarCelda(self)
 	}
 	
 	method moverNorte() {
@@ -49,5 +53,41 @@ object jugadorRojo{
 	method cambiarImagen(){
 		const imagenes = ["enojado.jpg", "feliz.jpg"]
 		image = imagenes.anyOne()
+	}
+	
+	//PARTIDA
+	
+	method agregarCelda(celda){
+		terreno.add(celda)
+	}
+	
+	method agregarCuello(celda){
+		cuello.add(celda)
+	}
+	
+	method adueniarseCuello(){
+		if(cuello.isEmpty().negate())
+		cuello.forEach({celda => celda.cambiarDuenio(self) celda.estanRobando(false)})
+		terreno = terreno + cuello
+		cuello.clear()
+	}
+	
+	method suicidarse(){
+		game.sound("suicidio" + 1.randomUpTo(4) + ".mp3").play()
+		terreno.forEach({celda => celda.cambiarDuenio(neutral)})
+		self.morir()
+	}
+	
+	method morir(){
+		self.puedeMoverse(false)
+		self.mirar(quieto)
+		cuello.forEach({celda => celda.desrobar()})
+		cuello.clear()
+		game.removeVisual(self)
+		spawns.anyOne().reaparecerJugador(self)
+	}
+	
+	method perderCelda(celda){
+		terreno.remove(celda)
 	}
 }

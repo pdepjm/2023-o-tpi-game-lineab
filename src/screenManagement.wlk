@@ -7,7 +7,7 @@ import menuInstrucciones.*
 import menuCreditos.*
 import celdas.*
 import spawns.*
-import ranking.*
+//import ranking.*
 
 object screenManagement {
 	method configurarInicio(){
