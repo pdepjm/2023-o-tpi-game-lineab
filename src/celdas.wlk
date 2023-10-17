@@ -24,20 +24,24 @@ class Celda{
     			jugador.suicidarse()
     		}else{
     			jugador.matar(ladron)
+    			self.robadaPor(jugador)
     		}
     	}else{
     		if(duenio != jugador){
-    			estanRobando = true
-    			ladron = jugador
-    			image = "celda_robada_" + jugador.nombre() +  ".png"
-    			jugador.agregarCuello(self)
+    			self.robadaPor(jugador)
     		}else{
     			jugador.adueniarseCuello()
     			//rellenar
     		}
     	}
     }   
-
+    
+    method robadaPor(jugador){
+    	estanRobando = true
+    	ladron = jugador
+    	image = "celda_robada_" + jugador.nombre() +  ".png"
+    	jugador.agregarCuello(self)
+    }
  
     method cambiarDuenio(jugador){
     	duenio.perderCelda(self)

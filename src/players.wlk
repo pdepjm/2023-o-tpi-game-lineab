@@ -97,6 +97,7 @@ class Jugador{
 		cuello.forEach({celda => celda.desrobar()})
 		cuello.clear()
 		game.removeVisual(self)
+		terreno.clear()
 		spawns.anyOne().reaparecerJugador(self)
 	}
 	
