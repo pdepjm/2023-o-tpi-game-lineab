@@ -23,7 +23,7 @@ class Celda{
     		if(ladron == jugador){
     			jugador.suicidarse()
     		}else{
-    			//matas
+    			jugador.matar(ladron)
     		}
     	}else{
     		if(duenio != jugador){
@@ -34,7 +34,6 @@ class Celda{
     		}else{
     			jugador.adueniarseCuello()
     			//rellenar
-    		
     		}
     	}
     }   
@@ -96,7 +95,7 @@ object celdasManager{
 object neutral{
 	method perderCelda(celda){}
 	
-	method agregarCelda(){}
+	method agregarCelda(celda){}
 }
 
 //2

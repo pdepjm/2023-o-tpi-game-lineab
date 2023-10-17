@@ -43,10 +43,10 @@ object spawnsManager{
 		spawns.clear() //por si se reinicia la partida
 		spawns.add(new Spawn(posCentralX = 12, posCentralY = 5))
 		spawns.add(new Spawn(posCentralX = 26, posCentralY = 5))
-		spawns.add(new Spawn(posCentralX = 6, posCentralY = 5))
+		spawns.add(new Spawn(posCentralX = 6, posCentralY = 9))
 		spawns.add(new Spawn(posCentralX = 12, posCentralY = 14))
 		spawns.add(new Spawn(posCentralX = 26, posCentralY = 14))
-		spawns.add(new Spawn(posCentralX = 37, posCentralY = 5))
+		spawns.add(new Spawn(posCentralX = 37, posCentralY = 9))
 	}
 }
 
