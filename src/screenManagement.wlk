@@ -40,7 +40,7 @@ object screenManagement {
 	game.addVisual(digito3R)
 	game.addVisual(digito4R)*/
 	contadorInicio.iniciar()
-	game.onTick(500, "Animacion Jugador", {jugadorRojo.cambiarImagen()})
+	game.onTick(500, "Animacion Jugador", {jugadores.forEach({jugador => jugador.cambiarImagen()})})
 	game.schedule(3000,{
 		game.removeVisual(contadorInicio)
 		contadorInicio.estadoInicial()

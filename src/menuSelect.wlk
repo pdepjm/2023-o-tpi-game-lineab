@@ -4,6 +4,7 @@ import Sonidos.*
 import teclado.*
 import reloj.*
 import celdas.*
+import players.*
 
 object menuSelect{
 	var seleccionado = 0
@@ -36,6 +37,7 @@ object managerMenuInicio{
 	}
 	
 	method iniciarPartida(){
+		jugadoresManagement.inicializarJugadores()
 		screenManagement.configPartida()
 		sonido.iniciarPartida()
 		teclado.configPartida() 

@@ -4,11 +4,15 @@ import Sonidos.*
 import celdas.*
 import spawns.*
 
-const jugadores = [jugadorRojo]
+const jugadores = []
 
 const numSonid = [1,2,3,4]
  
-object jugadorRojo{
+var jugadorRojo
+
+var jugadorAzul
+ 
+class Jugador{
 	var property position = game.at(6,6)
 	var property mira = quieto 
 	var image = "enojado.jpg"
@@ -105,4 +109,15 @@ object jugadorRojo{
 		ladron.terreno().forEach({celda => celda.cambiarDuenio(ladron)})
 		ladron.morir()
 	}
+}
+
+object jugadoresManagement{
+	method inicializarJugadores(){
+		jugadores.clear()
+		jugadorRojo = new Jugador()
+		jugadorAzul = new Jugador()
+        jugadores.add(jugadorRojo)
+        //jugadores.add(jugadorAzul)		
+	}
+	
 }
