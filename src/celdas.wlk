@@ -18,7 +18,7 @@ class Celda{
     	estanRobando = _valor
     } 
 
-    method interactuarCelda(jugador){
+    method interactuarCelda(jugador){ // REVISAR: Los tipitos se están muriendo cuando chocan con un borde
     	if(estanRobando){
     		if(ladron == jugador){
     			jugador.suicidarse()
@@ -29,7 +29,7 @@ class Celda{
     		if(duenio != jugador){
     			estanRobando = true
     			ladron = jugador
-    			image = "celda_robada_" + jugador.toString() + ".png"
+    			image = "celda_robada_" + jugador.nombre() +  ".png"
     			jugador.agregarCuello(self)
     		}else{
     			jugador.adueniarseCuello()
@@ -49,7 +49,7 @@ class Celda{
     method desrobar(){
     	ladron = neutral
     	estanRobando = false
-    	image = "celda_" + duenio.toString() + ".png"
+    	image = "celda_" + duenio.nombre() + ".png"
     }
 }
 
@@ -92,10 +92,15 @@ object celdasManager{
     method celda(posX, posY) = celdas.get(12 * posX + posY - 64)
 }
 
-object neutral{
+object neutral{ //Es un objeto de la clase Jugador???
 	method perderCelda(celda){}
-	
+	method suicidarse(){}
 	method agregarCelda(celda){}
+	method matar(ladron){}
+	method adueniarseCuello(){}
+	method agregarCuello(celda){}
+	method nombre()="neutral"
+	method morir(){}
 }
 
 //2

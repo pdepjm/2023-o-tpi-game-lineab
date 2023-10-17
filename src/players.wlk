@@ -4,21 +4,21 @@ import Sonidos.*
 import celdas.*
 import spawns.*
 
-const jugadores = []
+const jugadores = [jugadorRojo, jugadorAzul]
 
 const numSonid = [1,2,3,4]
  
-var jugadorRojo
+const jugadorRojo = new Jugador(nombre="jugadorRojo", image="enojado.jpg")
+const jugadorAzul = new Jugador(nombre="jugadorAzul", image="jugadorAzul.jpg")
 
-var jugadorAzul
- 
 class Jugador{
 	var property position = game.at(6,6)
 	var property mira = quieto 
-	var image = "enojado.jpg"
+	var image //= "enojado.jpg"
 	var puedeMoverse = false
 	const cuello = []
 	var terreno = []
+	var nombre
 	
 	//MOVIMIENTOS
 	
@@ -63,6 +63,8 @@ class Jugador{
 		image = imagenes.anyOne()
 	}
 	
+	method nombre()=nombre
+	
 	//PARTIDA
 	
 	method agregarCelda(celda){
@@ -79,11 +81,11 @@ class Jugador{
 		terreno = terreno + cuello
 		cuello.clear()
 		}
-		}
+	}
 	
 	method suicidarse(){
 		if(mira != quieto){
-		game.sound("suicidio" + numSonid.anyOne().toString() + ".mp3").play()
+		game.sound("suicidio" + (numSonid.anyOne()).toString() + ".mp3").play()
 		terreno.forEach({celda => celda.cambiarDuenio(neutral)})
 		self.morir()
 		}
@@ -105,19 +107,19 @@ class Jugador{
 	method terreno() = terreno
 	
 	method matar(ladron){
-		game.sound("kill" + numSonid.anyOne().toString() + ".mp3").play()
-		ladron.terreno().forEach({celda => celda.cambiarDuenio(ladron)})
+		game.sound("kill" + (numSonid.anyOne()).toString() + ".mp3").play()
+		ladron.terreno().forEach({celda => celda.cambiarDuenio(self)})
 		ladron.morir()
 	}
 }
 
-object jugadoresManagement{
+/*object jugadoresManagement{
 	method inicializarJugadores(){
 		jugadores.clear()
-		jugadorRojo = new Jugador()
-		jugadorAzul = new Jugador()
+		const jugadorRojo = new Jugador()
+		var jugadorAzul = new Jugador()
         jugadores.add(jugadorRojo)
-        //jugadores.add(jugadorAzul)		
+        jugadores.add(jugadorAzul)		
 	}
 	
-}
+}*/

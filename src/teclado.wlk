@@ -28,6 +28,11 @@ object teclado {
 	keyboard.left().onPressDo({jugadorRojo.mirar(oeste)})
 	keyboard.right().onPressDo({jugadorRojo.mirar(este)})
 	keyboard.space().onPressDo({jugadorRojo.mirar(quieto)})
+	keyboard.w().onPressDo({jugadorAzul.mirar(norte)})
+	keyboard.s().onPressDo({jugadorAzul.mirar(sur)})
+	keyboard.a().onPressDo({jugadorAzul.mirar(oeste)})
+	keyboard.d().onPressDo({jugadorAzul.mirar(este)})
+	keyboard.x().onPressDo({jugadorAzul.mirar(quieto)})
 	}
 	
 	method configFinal(){

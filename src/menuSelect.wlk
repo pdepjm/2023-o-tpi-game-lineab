@@ -37,7 +37,7 @@ object managerMenuInicio{
 	}
 	
 	method iniciarPartida(){
-		jugadoresManagement.inicializarJugadores()
+		//jugadoresManagement.inicializarJugadores()
 		screenManagement.configPartida()
 		sonido.iniciarPartida()
 		teclado.configPartida() 
