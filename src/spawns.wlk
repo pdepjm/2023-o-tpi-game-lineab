@@ -26,27 +26,29 @@ class Spawn {
 	}
 	
 	method darTerrenoInicial(jugador){/*Falta Terminar (es de 3x3 */
-	  celdasManager.celda(posCentralX -1, posCentralY - 1).cambiarDuenio(jugador)
-	  celdasManager.celda(posCentralX -1 , posCentralY).cambiarDuenio(jugador)
-	  celdasManager.celda(posCentralX -1, posCentralY +1).cambiarDuenio(jugador)
-	  celdasManager.celda(posCentralX, posCentralY -1).cambiarDuenio(jugador)
+	  celdasManager.celda(posCentralX -2, posCentralY - 2).cambiarDuenio(jugador)
+	  celdasManager.celda(posCentralX -2 , posCentralY).cambiarDuenio(jugador)
+	  celdasManager.celda(posCentralX -2, posCentralY + 2).cambiarDuenio(jugador)
+	  celdasManager.celda(posCentralX, posCentralY -2).cambiarDuenio(jugador)
 	  celdasManager.celda(posCentralX, posCentralY).cambiarDuenio(jugador)
-	  celdasManager.celda(posCentralX, posCentralY +1).cambiarDuenio(jugador)
-	  celdasManager.celda(posCentralX +1, posCentralY -1).cambiarDuenio(jugador)
-	  celdasManager.celda(posCentralX +1,  posCentralY).cambiarDuenio(jugador)
-	  celdasManager.celda(posCentralX +1, posCentralY +1).cambiarDuenio(jugador)
+	  celdasManager.celda(posCentralX, posCentralY +2).cambiarDuenio(jugador)
+	  celdasManager.celda(posCentralX +2, posCentralY -2).cambiarDuenio(jugador)
+	  celdasManager.celda(posCentralX +2,  posCentralY).cambiarDuenio(jugador)
+	  celdasManager.celda(posCentralX +2, posCentralY +2).cambiarDuenio(jugador)
 	  }
 }
 
 object spawnsManager{
 	method inicializarSpawns(){//MANAGER
 		spawns.clear() //por si se reinicia la partida
-		spawns.add(new Spawn(posCentralX = 12, posCentralY = 5))
-		spawns.add(new Spawn(posCentralX = 26, posCentralY = 5))
-		spawns.add(new Spawn(posCentralX = 6, posCentralY = 9))
-		spawns.add(new Spawn(posCentralX = 12, posCentralY = 14))
-		spawns.add(new Spawn(posCentralX = 26, posCentralY = 14))
-		spawns.add(new Spawn(posCentralX = 37, posCentralY = 9))
+		spawns.add(new Spawn(posCentralX = 26, posCentralY = 6))
+		spawns.add(new Spawn(posCentralX = 26, posCentralY = 6))
+		spawns.add(new Spawn(posCentralX = 6, posCentralY = 18))
+		spawns.add(new Spawn(posCentralX = 6, posCentralY = 26))
+		spawns.add(new Spawn(posCentralX = 26, posCentralY = 26))
+		spawns.add(new Spawn(posCentralX = 58, posCentralY = 18))
+		spawns.add(new Spawn(posCentralX = 26, posCentralY = 26))
+		spawns.add(new Spawn(posCentralX = 58, posCentralY = 18))
 	}
 }
 

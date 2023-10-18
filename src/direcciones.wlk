@@ -6,14 +6,14 @@ import players.*
 
 object norte {
 	method desplazar(jugador){
-		if(jugador.position().y() < 15) jugador.moverNorte()
+		if(jugador.position().y() < 26) jugador.moverNorte()
 	}
 	method opuesto() = sur	
 }
 
 object sur {	
-	method desplazar(jugador){  //no es error
-		if(jugador.position().y() > 4) jugador.moverSur()
+	method desplazar(jugador){
+		if(jugador.position().y() > 2) jugador.moverSur()
 	}	
 	
 	method opuesto() = norte	
@@ -21,7 +21,7 @@ object sur {
 
 object este {
 	method desplazar(jugador){
-		if(jugador.position().x() < 38) jugador.moverEste()
+		if(jugador.position().x() < 74) jugador.moverEste()
 	}	
 	
 	method opuesto() = oeste	
@@ -29,7 +29,7 @@ object este {
 
 object oeste {
 	method desplazar(jugador){
-		if(jugador.position().x() > 5) jugador.moverOeste()
+		if(jugador.position().x() > 2) jugador.moverOeste()
 	}	
 	
 	method opuesto() = este	

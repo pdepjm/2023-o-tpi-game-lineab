@@ -11,9 +11,9 @@ import spawns.*
 
 object screenManagement {
 	method configurarInicio(){
-	game.width(45)
-	game.height(20)
-	game.cellSize(40)
+	game.width(80)
+	game.height(35)
+	game.cellSize(20)
 	game.boardGround("fondoCeldas30.png")
 	}
 	
@@ -136,7 +136,7 @@ object logoMenu {
 
 object marcoFondo {
 	method image() = "marcoPartida_" + reloj.color() + ".png" //el marco del reloj esta incluido en el marco violeta, por eso depende del color del reloj
-	method position() = game.at(4,3)
+	method position() = game.at(0,0)
 }
 
 //MENU INSTRUCCIONES

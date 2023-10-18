@@ -58,8 +58,8 @@ class Celda{
 }
 
 object celdasManager{
-    var i = 5
-    var j = 4
+    var i = 2
+    var j = 2
 
 
     method inicializarPartida(){
@@ -68,23 +68,23 @@ object celdasManager{
     }
 
     method crearCeldas(){
-        if(i<=38){//38
-            if(j<=15){//17
+        if(i<= 76){//38
+            if(j<= 28){//17
                 self.agregarCelda(new Celda(posX = i, posY = j))
-                j += 1
+                j += 2
             }else{
-            j = 4
-            i += 1
+            j = 2
+            i += 2
             }
         }else{
         game.removeTickEvent("Inicializando Celdas")
-        i = 5 //Reinicia los contadores para cuando se reinicia la partida
-        j = 4
+        i = 2 //Reinicia los contadores para cuando se reinicia la partida
+        j = 2
         managerMenuInicio.iniciarPartida()
     }
     }
 
-//54 55 56 57 58 59 510 511 512 513 514 515 64
+//22 24 26 28 210 212 214 216 218 220 222 224 226 228 42
 
     method agregarCelda(celda){
         celdas.add(celda)
@@ -93,7 +93,7 @@ object celdasManager{
 
 
 //(5.4)     
-    method celda(posX, posY) = celdas.get(12 * posX + posY - 64)
+    method celda(posX, posY) = celdas.get(7 * posX + posY/2 - 15)
 }
 
 object neutral{ //Es un objeto de la clase Jugador???

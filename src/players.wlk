@@ -38,16 +38,16 @@ class Jugador{
 	  }
 	
 	method moverNorte() {
-		position = position.up(1)
+		position = position.up(2)
 		}
 	method moverSur() {
-		position = position.down(1)
+		position = position.down(2)
 	}
 	method moverOeste() {
-		position = position.left(1)
+		position = position.left(2)
 	}
 	method moverEste() {
-		position = position.right(1)
+		position = position.right(2)
 	}
 	
 	//No hay ningun error
