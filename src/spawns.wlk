@@ -25,7 +25,7 @@ class Spawn {
 		game.addVisual(jugador)
 	}
 	
-	method darTerrenoInicial(jugador){/*Falta Terminar (es de 3x3 */
+	method darTerrenoInicial(jugador){
 	  celdasManager.celda(posCentralX -2, posCentralY - 2).cambiarDuenio(jugador)
 	  celdasManager.celda(posCentralX -2 , posCentralY).cambiarDuenio(jugador)
 	  celdasManager.celda(posCentralX -2, posCentralY + 2).cambiarDuenio(jugador)
@@ -41,30 +41,11 @@ class Spawn {
 object spawnsManager{
 	method inicializarSpawns(){//MANAGER
 		spawns.clear() //por si se reinicia la partida
-		spawns.add(new Spawn(posCentralX = 26, posCentralY = 6))
-		spawns.add(new Spawn(posCentralX = 26, posCentralY = 6))
-		spawns.add(new Spawn(posCentralX = 6, posCentralY = 18))
-		spawns.add(new Spawn(posCentralX = 6, posCentralY = 26))
-		spawns.add(new Spawn(posCentralX = 26, posCentralY = 26))
-		spawns.add(new Spawn(posCentralX = 58, posCentralY = 18))
-		spawns.add(new Spawn(posCentralX = 26, posCentralY = 26))
-		spawns.add(new Spawn(posCentralX = 58, posCentralY = 18))
+		spawns.add(new Spawn(posCentralX = 16, posCentralY = 4))
+		spawns.add(new Spawn(posCentralX = 58, posCentralY = 4))
+		spawns.add(new Spawn(posCentralX = 4, posCentralY = 14))
+		spawns.add(new Spawn(posCentralX = 16, posCentralY = 26))
+		spawns.add(new Spawn(posCentralX = 58, posCentralY = 26))
+		spawns.add(new Spawn(posCentralX = 74, posCentralY = 14))
 	}
 }
-
-/*Spawns tamaño viejo
-new Spawn(posCentralX = 57, posCentralY = 3)
-new Spawn(posCentralX = 19, posCentralY = 3)
-new Spawn(posCentralX = 3, posCentralY = 7)
-new Spawn(posCentralX = 3, posCentralY = 22)
-new Spawn(posCentralX = 19, posCentralY = 29)
-new Spawn(posCentralX = 57, posCentralY = 29)
-new Spawn(posCentralX = 76, posCentralY = 22)
-new Spawn(posCentralX = 76, posCentralY = 7)
-*/
-
-//CASILLAS LIMITE
-//Oeste2
-//Sur2
-//Este77
-//Norte30

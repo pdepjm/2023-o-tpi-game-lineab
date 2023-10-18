@@ -165,7 +165,7 @@ object marcoFondo {
 //FINAL PARTIDA
 
 object barraTiempoOut{
-	const property position = game.at(-1,13)
+	const property position = game.at(-3,13)
 	const property image = "barraTiempoFinalizado.png"
 }
 
