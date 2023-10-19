@@ -18,7 +18,7 @@ class Celda{
     	estanRobando = _valor
     } 
 
-    method interactuarCelda(jugador){ // REVISAR: Los tipitos se están muriendo cuando chocan con un borde
+    method interactuarCelda(jugador){ 
     	if(estanRobando){
     		if(ladron == jugador){
     			jugador.suicidarse()

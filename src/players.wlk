@@ -4,12 +4,14 @@ import Sonidos.*
 import celdas.*
 import spawns.*
 
-const jugadores = [jugadorRojo, jugadorAzul]
+const jugadores = [jugadorRojo, jugadorAzul, jugadorVerde]
 
 const numSonid = [1,2,3,4]
  
-const jugadorRojo = new Jugador(nombre="jugadorRojo", image="enojado.jpg")
+const jugadorRojo = new Jugador(nombre="jugadorRojo", image="jugadorRojo.jpg")
 const jugadorAzul = new Jugador(nombre="jugadorAzul", image="jugadorAzul.jpg")
+const jugadorVerde = new Jugador(nombre="jugadorVerde", image="jugadorVerde.jpg")
+
 
 class Jugador{
 	var property position = game.at(6,6)
@@ -19,11 +21,15 @@ class Jugador{
 	const cuello = []
 	var terreno = []
 	var nombre
-	
+	var puedeSuicidarse = true
 	//MOVIMIENTOS
 	
 	method image() = image
 	
+	method puedeSuicidarse(bool){
+		puedeSuicidarse = bool
+	}
+
 	method puedeMoverse(_puedeMoverse){
 		puedeMoverse = _puedeMoverse
 	}
@@ -84,11 +90,10 @@ class Jugador{
 	}
 	
 	method suicidarse(){
-		if(mira != quieto){
+		if(puedeSuicidarse){
 		game.sound("suicidio" + (numSonid.anyOne()).toString() + ".mp3").play()
 		terreno.forEach({celda => celda.cambiarDuenio(neutral)})
-		self.morir()
-		}
+		self.morir()}
 	}
 	
 	method morir(){

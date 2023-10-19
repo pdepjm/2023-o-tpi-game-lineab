@@ -27,12 +27,17 @@ object teclado {
 	keyboard.down().onPressDo({jugadorRojo.mirar(sur)})
 	keyboard.left().onPressDo({jugadorRojo.mirar(oeste)})
 	keyboard.right().onPressDo({jugadorRojo.mirar(este)})
-	keyboard.space().onPressDo({jugadorRojo.mirar(quieto)})
+	keyboard.control().onPressDo({jugadorRojo.mirar(quieto)})
 	keyboard.w().onPressDo({jugadorAzul.mirar(norte)})
 	keyboard.s().onPressDo({jugadorAzul.mirar(sur)})
 	keyboard.a().onPressDo({jugadorAzul.mirar(oeste)})
 	keyboard.d().onPressDo({jugadorAzul.mirar(este)})
-	keyboard.x().onPressDo({jugadorAzul.mirar(quieto)})
+	keyboard.shift().onPressDo({jugadorAzul.mirar(quieto)})
+	keyboard.i().onPressDo({jugadorVerde.mirar(norte)})
+	keyboard.k().onPressDo({jugadorVerde.mirar(sur)})
+	keyboard.j().onPressDo({jugadorVerde.mirar(oeste)})
+	keyboard.l().onPressDo({jugadorVerde.mirar(este)})
+	keyboard.space().onPressDo({jugadorVerde.mirar(quieto)})
 	}
 	
 	method configFinal(){

@@ -6,14 +6,23 @@ import players.*
 
 object norte {
 	method desplazar(jugador){
-		if(jugador.position().y() < 26) jugador.moverNorte()
+		if(jugador.position().y() < 27) {
+			jugador.moverNorte()
+			jugador.puedeSuicidarse(true)
+			}
+		else {jugador.puedeSuicidarse(false)}
 	}
 	method opuesto() = sur	
 }
 
 object sur {	
 	method desplazar(jugador){
-		if(jugador.position().y() > 2) jugador.moverSur()
+		if(jugador.position().y() > 2) {
+			jugador.moverSur()
+			jugador.puedeSuicidarse(true)
+			}
+		else {jugador.puedeSuicidarse(false)}
+		
 	}	
 	
 	method opuesto() = norte	
@@ -21,7 +30,12 @@ object sur {
 
 object este {
 	method desplazar(jugador){
-		if(jugador.position().x() < 74) jugador.moverEste()
+		if(jugador.position().x() < 75) {
+			jugador.moverEste()
+			jugador.puedeSuicidarse(true)
+			}
+		else {jugador.puedeSuicidarse(false)}
+		
 	}	
 	
 	method opuesto() = oeste	
@@ -29,14 +43,19 @@ object este {
 
 object oeste {
 	method desplazar(jugador){
-		if(jugador.position().x() > 2) jugador.moverOeste()
+		if(jugador.position().x() > 2) {
+			jugador.moverOeste()
+			jugador.puedeSuicidarse(true)
+			}
+		else {jugador.puedeSuicidarse(false)}
+		
 	}	
 	
 	method opuesto() = este	
 }
 
 object quieto {
-		method desplazar(jugador){}
+		method desplazar(jugador) = jugador.puedeSuicidarse(false)
 		
 		method opuesto() = self   //quieto no tiene opuesto 		
 }
