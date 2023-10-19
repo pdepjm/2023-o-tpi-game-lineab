@@ -6,7 +6,7 @@ object sonido{
     var musicaPrincipioPartida
     var musicaFinalPartida
     var musicaMenuFinal
-    var musicaInstrucciones
+    var musicaIns
     var musicaCreditos
     
     //MENU INICIO
@@ -73,17 +73,7 @@ object sonido{
 		musicaMenuFinal.stop()
 	}
 	
-    // INSTRUCCIONES
-
-	method configInstrucciones(){
-		musicaInstrucciones = game.sound("musicaInstrucciones.mp3")
-		game.sound("switchMenu.mp3").volume(0.60)
-        musicaInstrucciones.volume(0.5)
-        musicaInstrucciones.play()
-        musicaInstrucciones.shouldLoop(true)
-	}
-	
-	// CREDITOS
+ // CREDITOS
 	
 method configCreditos(){
 		musicaCreditos = game.sound("musicaCreditos.mp3")
@@ -92,5 +82,21 @@ method configCreditos(){
         game.schedule(500,{musicaCreditos.play()})
         game.schedule(501,{musicaCreditos.shouldLoop(true)})
 	}
-}
+
+
+
+ // INSTRUCCIONES
+
+	
+     method configInstrucciones(){
+		musicaIns = game.sound("musicaInstrucciones.mp3")
+		game.sound("switchMenu.mp3").volume(0.60)
+        musicaIns.volume(0.5)
+        musicaIns.play()
+        musicaIns.shouldLoop(true)
+	}
+	method stopmusicains(){musicaIns.stop()}
+	
+	method stopmusicaCreditos(){musicaCreditos.stop()}
+	}
 	

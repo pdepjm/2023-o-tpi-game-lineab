@@ -20,7 +20,7 @@ object teclado {
 	keyboard.control().onPressDo({menuInstrucciones.volverAlMenu() })
 	}
 	method configCreditos(){
-	keyboard.control().onPressDo({menuInstrucciones.volverAlMenu() })
+	keyboard.control().onPressDo({menuCreditos.volverAlMenu() })
 	}
 	method configPartida(){
 	keyboard.up().onPressDo({jugadorRojo.mirar(norte)})

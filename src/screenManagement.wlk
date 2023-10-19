@@ -58,15 +58,16 @@ object screenManagement {
 	//game.whenCollideDo(charcoLodo, {jugador => jugador.disminuirVelocidad()})
 	}
 	
+
 	method configInstrucciones(){
 	game.clear()
 	menuInstrucciones.reiniciarSeleccionado()
 	game.addVisual(menuInstrucciones)
 	// PARA LA SECUENCIA DE IMAGENES DENTRO DE LAS INTRUCCIONES
-	//tutoriales.transicion()
-	//game.addVisual(tutoriales)
+	tutoriales.transicion()
+	game.addVisual(tutoriales)
 	}
-
+	
 	method configCreditos(){
 	game.clear()
 	game.addVisual(menuCreditos)

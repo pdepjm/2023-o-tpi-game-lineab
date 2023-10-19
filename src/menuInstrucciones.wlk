@@ -1,4 +1,5 @@
 
+
 import wollok.game.*
 import screenManagement.*
 import Sonidos.*
@@ -24,16 +25,22 @@ object menuInstrucciones {
 		screenManagement.configuarMenuInicial()
 		sonido.configInicio()
 		teclado.configInicio()
+		sonido.stopmusicains()
 	}
 	
 }
 
-/* PARA LA SECUENCIA DE IMAGENES DENTRO DE LAS INSTRUCCIONES, FALTAN IMAGENES FORMATO : tutorial+numero de imagen de instrucciones+numero de imagen de tutorial+.png
+// PARA LA SECUENCIA DE IMAGENES DENTRO DE LAS INSTRUCCIONES, FALTAN IMAGENES FORMATO : tutorial+numero de imagen de instrucciones+numero de imagen de tutorial+.png
+
 object tutoriales {
-	var x = 0
-	
-	method x() = x%(CANTIDAD DE IMAGENES NECESARIAS)
-	method image() = "tutorial"+ menuInstrucciones.modo().toString()+self.x().toString() +".png"
-	method transicion() {game.onTick(1000,"transicion",{x = x + 1})}
+	var x =0
+	const property position = game.at(14,7)
+	method sumarx() {x = x+1}
+	method restox() = x%12
+	method image() = "tutorial"+menuInstrucciones.modo().toString()+self.restox()+".png"
+	method transicion() {game.onTick(1000,"transicion",{self.sumarx()})}
 }
-*/
+
+//"tutorial"+menuInstrucciones.modo().toString()+self.restox()+".png"
+
+

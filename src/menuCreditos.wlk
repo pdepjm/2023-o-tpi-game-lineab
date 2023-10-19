@@ -17,4 +17,10 @@ object menuCreditos {
 	
 	method image() = "cande.png"
 	
+		method volverAlMenu() {
+		screenManagement.configuarMenuInicial()
+		sonido.configInicio()
+		teclado.configInicio()
+		sonido.stopmusicaCreditos()
+	}
 }
