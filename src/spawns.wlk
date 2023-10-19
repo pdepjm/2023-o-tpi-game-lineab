@@ -2,7 +2,7 @@ import wollok.game.*
 import direcciones.*
 import celdas.*
 
-const spawns = []
+const spawns = [spawn1, spawn2, spawn3, spawn4, spawn5, spawn6]
 
 
 class Spawn {
@@ -38,14 +38,12 @@ class Spawn {
 	  }
 }
 
+	const spawn1 = new Spawn(posCentralX = 16, posCentralY = 4)
+    const spawn2 = new Spawn(posCentralX = 58, posCentralY = 4)
+	const spawn3 = new Spawn(posCentralX = 4, posCentralY = 14)
+	const spawn4 = new Spawn(posCentralX = 16, posCentralY = 26)
+	const spawn5 = new Spawn(posCentralX = 58, posCentralY = 26)
+    const spawn6 = new Spawn(posCentralX = 74, posCentralY = 14)
+
 object spawnsManager{
-	method inicializarSpawns(){//MANAGER
-		spawns.clear() //por si se reinicia la partida
-		spawns.add(new Spawn(posCentralX = 16, posCentralY = 4))
-		spawns.add(new Spawn(posCentralX = 58, posCentralY = 4))
-		spawns.add(new Spawn(posCentralX = 4, posCentralY = 14))
-		spawns.add(new Spawn(posCentralX = 16, posCentralY = 26))
-		spawns.add(new Spawn(posCentralX = 58, posCentralY = 26))
-		spawns.add(new Spawn(posCentralX = 74, posCentralY = 14))
-	}
 }

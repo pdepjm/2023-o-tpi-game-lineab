@@ -18,8 +18,8 @@ class Jugador{
 	var property mira = quieto 
 	var image //= "enojado.jpg"
 	var puedeMoverse = false
-	const cuello = []
-	var terreno = []
+	const cuello = #{}
+	var terreno = #{}
 	var nombre
 	var puedeSuicidarse = true
 	//MOVIMIENTOS
@@ -117,15 +117,12 @@ class Jugador{
 		ladron.terreno().forEach({celda => celda.cambiarDuenio(self)})
 		ladron.morir()
 	}
+	
+	/*method aumentarVelocidad(){
+		game.onTick(200,"AumentarVelocidad", {jugador => jugador.moverYAccionarCelda()})
+	    game.schedule(1000, {game.removeTickEvent("AumentarVelocidad")})
+	}
+	*/
 }
 
-/*object jugadoresManagement{
-	method inicializarJugadores(){
-		jugadores.clear()
-		const jugadorRojo = new Jugador()
-		var jugadorAzul = new Jugador()
-        jugadores.add(jugadorRojo)
-        jugadores.add(jugadorAzul)		
-	}
-	
-}*/
+

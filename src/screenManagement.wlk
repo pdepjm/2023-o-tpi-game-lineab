@@ -26,7 +26,6 @@ object screenManagement {
 	}
 	
 	method configPartida(){
-	spawnsManager.inicializarSpawns()
 	jugadores.forEach({jugador => spawns.anyOne().aparecerJugador(jugador)})
 	game.addVisual(marcoFondo)
 	game.addVisual(minutero1)
