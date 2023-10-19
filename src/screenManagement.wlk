@@ -7,6 +7,7 @@ import menuInstrucciones.*
 import menuCreditos.*
 import celdas.*
 import spawns.*
+import poderes.*
 //import ranking.*
 
 object screenManagement {
@@ -34,6 +35,8 @@ object screenManagement {
 	game.addVisual(segundero2)
 	game.addVisual(logoMenu)
 	game.addVisual(contadorInicio)
+        game.addVisual(estrella)
+	game.addVisual(charcoLodo)
 	/* 
 	game.addVisual(digito1R)
 	game.addVisual(digito2R)
@@ -50,6 +53,10 @@ object screenManagement {
 		game.onTick(200,"Mover a los Jugadores", {jugadores.forEach({jugador => jugador.moverYAccionarCelda()})})
 		game.onTick(1000, "Actualizar Reloj", {reloj.avanzarTiempo()})
 		})
+	game.onTick(7000, "aumentar velocidad", {estrella.movete()})
+	game.onTick(7000, "disminuir velocidad", {charcoLodo.movete()})
+	//game.whenCollideDo(estrella, {jugador => jugador.aumentarVelocidad()})
+	//game.whenCollideDo(charcoLodo, {jugador => jugador.disminuirVelocidad()})
 	}
 	
 	method configInstrucciones(){
