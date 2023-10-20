@@ -15,7 +15,7 @@ object screenManagement {
 	game.width(80)
 	game.height(35)
 	game.cellSize(20)
-	game.boardGround("fondoCeldas30.png")
+	game.boardGround("fondoCeldas.png")
 	}
 	
 	method configuarMenuInicial(){

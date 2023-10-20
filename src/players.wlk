@@ -20,7 +20,7 @@ class Jugador{
 	var puedeMoverse = false
 	const cuello = #{}
 	var terreno = #{}
-	var nombre
+	const property nombre
 	var puedeSuicidarse = true
 	//MOVIMIENTOS
 	
