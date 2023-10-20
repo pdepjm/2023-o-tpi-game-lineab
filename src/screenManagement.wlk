@@ -26,6 +26,7 @@ object screenManagement {
 	}
 	
 	method configPartida(){
+    game.removeVisual(pantallaCarga)
 	jugadores.forEach({jugador => spawns.anyOne().aparecerJugador(jugador)})
 	game.addVisual(marcoFondo)
 	game.addVisual(minutero1)
@@ -108,6 +109,24 @@ object fondoNegro{
 object fondoMenuInicio{
 	method image() = "fondoInicioAgrandar.png"
 	method position() = game.at(10, 0)
+}
+
+//PANTALLA DE CARGA
+
+object pantallaCarga{
+	var contador = 1
+	
+	method position() = game.at(-1,0)
+
+    method image() = "pantallaCarga" + contador.toString() + ".png"
+    
+    method avanzarContador(){
+    	contador += 1
+    }
+    
+    method reiniciarContador(){
+    	contador = 1
+    }
 }
 
 //PARTIDA

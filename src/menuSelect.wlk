@@ -32,6 +32,7 @@ object managerMenuInicio{
 			self.mostrarInstrucciones()
 		}else{
 			game.clear()
+			game.addVisual(pantallaCarga)
 			celdasManager.inicializarPartida()
 		}
 	}

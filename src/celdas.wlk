@@ -1,5 +1,6 @@
 import wollok.game.*
 import menuSelect.*
+import screenManagement.*
 
 const celdas = []
 
@@ -62,7 +63,7 @@ object celdasManager{
     var j = 2
 
 
-    method inicializarPartida(){
+    method inicializarPartida(){ //Cuando agreguemos las celdas del borde hay que avanzar el contador de la pantalla de carga
     celdas.clear() //por si se reinicia la partida
     game.onTick(1,"Inicializando Celdas",{self.crearCeldas()})
     }
