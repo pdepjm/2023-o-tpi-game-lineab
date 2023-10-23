@@ -58,6 +58,10 @@ class Celda{
     }
 }
 
+class CeldaBorde inherits Celda{
+	//comportamiento distinto en el chequeo de si esta rodeada de un color
+}
+
 object celdasManager{
     var i = 2
     var j = 2
@@ -71,7 +75,12 @@ object celdasManager{
     method crearCeldas(){
         if(i<= 76){//38
             if(j<= 28){//17
+            if(j != 2 && j != 28 && i != 2 && i != 76){
                 self.agregarCelda(new Celda(posX = i, posY = j))
+                if(i == 12 || i == 24 || i == 36 || i == 48 || i == 60 || i == 72 ) pantallaCarga.avanzarContador()
+                }else{ 
+                self.agregarCelda(new CeldaBorde(posX = i, posY = j)) 
+                }
                 j += 2
             }else{
             j = 2

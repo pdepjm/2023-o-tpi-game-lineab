@@ -26,7 +26,7 @@ object screenManagement {
 	}
 	
 	method configPartida(){
-    game.removeVisual(pantallaCarga)
+    pantallaCarga.desaparecer()
 	jugadores.forEach({jugador => spawns.anyOne().aparecerJugador(jugador)})
 	game.addVisual(marcoFondo)
 	game.addVisual(minutero1)
@@ -118,7 +118,9 @@ object pantallaCarga{
 	
 	method position() = game.at(-1,0)
 
-    method image() = "pantallaCarga" + contador.toString() + ".png"
+    method image() = "pantallaCarga" + self.modo().toString() + ".png"
+    
+    method modo() = contador.div(12)
     
     method avanzarContador(){
     	contador += 1
@@ -126,6 +128,11 @@ object pantallaCarga{
     
     method reiniciarContador(){
     	contador = 1
+    }
+    
+    method desaparecer(){
+    	game.removeVisual(self)
+    	self.reiniciarContador()
     }
 }
 
