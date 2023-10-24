@@ -35,6 +35,7 @@ object managerMenuFinal{
 		
 		method reiniciarPartida(){
 			game.clear()
+			game.addVisual(pantallaCarga)
 			celdasManager.inicializarPartida()
 		}
 		
