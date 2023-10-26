@@ -47,32 +47,32 @@ object reloj {
 	}
 	
 object minutero1{
-	const property position = game.at(37,32)
+	const property position = game.at(37,31)
     method image() = "minutero0" + reloj.color() + ".png"
 }
 
 object minutero2{
-	const property position = game.at(38,32) 
+	const property position = game.at(38,31) 
 	method image() = "minutero" + reloj.minutos().toString() + reloj.color() + ".png"
 }
 
 object segundero1{
-	const property position = game.at(40,32)
+	const property position = game.at(40,31)
 	method image() = "minutero" + reloj.segundos1().toString() + reloj.color() + ".png"
 }
 
 object segundero2{
-	const property position = game.at(41,32)
+	const property position = game.at(41,31)
 	method image() = "minutero" + reloj.segundos2().toString() + reloj.color() + ".png"
 }
 
 object timeOut{
-	const property position = game.at(37,32)
+	const property position = game.at(37,31)
 	method image() = "timeOut.png"
 }
 
 object fondoTimeOut{
-	const property position = game.at(38,32) 
+	const property position = game.at(38,31) 
 	method image() = "fondoNegroTimeOut.png" 
 }
 	
