@@ -8,7 +8,7 @@ import menuCreditos.*
 import celdas.*
 import spawns.*
 import poderes.*
-
+import estadisticas.*
 
 object screenManagement {
 	method configurarInicio(){
@@ -90,8 +90,16 @@ object screenManagement {
 		game.addVisual(fondoTimeOut)
 		game.addVisual(timeOut)
 		game.schedule(3000 , {game.removeVisual(barraTiempoOut) game.addVisual(barraWinner)})
-		game.schedule(7500, {game.removeVisual(barraWinner) game.addVisual(fondoMenuFinal) game.addVisual(menuFinalSelect)})
-	} 
+		game.schedule(7500, {self.configMenuFinal()})
+	}
+	
+	method configMenuFinal(){
+		game.removeVisual(barraWinner)
+	    game.addVisual(fondoMenuFinal)
+	    game.addVisual(menuFinalSelect)
+	    sobreviviente.mostrarSobreviviente()
+	    killer.mostrarKiller()
+	    }
 }
 
   

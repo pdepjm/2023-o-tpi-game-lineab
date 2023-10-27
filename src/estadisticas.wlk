@@ -43,6 +43,8 @@ object killer{
 	
 	method image() = "statKiller_" + killer.nombre().toString() + ".png"
    
+    method position() = game.at(22,8)
+   
     method establecerKiller(){
     	killer = jugadores.max{jugador => jugador.kills()}
     	kills = killer.kills()
@@ -62,20 +64,23 @@ object killer{
     	
     	method mostrarKiller(){
     		self.establecerKiller()
-    		self.establecerContadores()
     		game.addVisual(self)
+    		self.establecerContadores()
+    		
     	}
 }
 
-const contadorKills1 = new ContadorStat(posX = 6, posY = 5)
+const contadorKills1 = new ContadorStat(posX = 26, posY = 8)
 
-const contadorKills2 = new ContadorStat(posX = 6, posY = 5)
+const contadorKills2 = new ContadorStat(posX = 27, posY = 8)
 
 object sobreviviente{
 	var sobreviviente
 	var tiempoSobrevivido
 	
-	method image() = "statsobreviviente_" + sobreviviente.nombre().toString() + ".png"
+	method image() = "statSobreviviente_" + sobreviviente.nombre().toString() + ".png"
+   
+   method position() = game.at(49,8)
    
     method establecerSobreviviente(){
     	sobreviviente = jugadores.max{jugador => jugador.tiempoSobrevivido()}
@@ -98,11 +103,11 @@ object sobreviviente{
     	}
 }
 
-const minuteroTiempoSobr = new ContadorStat(posX = 30, posY = 5)
+const minuteroTiempoSobr = new ContadorStat(posX = 52, posY = 8)
 
-const segunderoTiempoSobr1 = new ContadorStat(posX = 32, posY = 5)
+const segunderoTiempoSobr1 = new ContadorStat(posX = 54, posY = 8)
 
-const segunderoTiempoSobr2 = new ContadorStat(posX = 33, posY = 5)
+const segunderoTiempoSobr2 = new ContadorStat(posX = 55, posY = 8)
 
 
 class ContadorStat{
