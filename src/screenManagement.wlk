@@ -27,7 +27,7 @@ object screenManagement {
 	
 	method configPartida(){
     pantallaCarga.desaparecer()
-	jugadores.forEach({jugador => spawns.anyOne().aparecerJugador(jugador)})
+	jugadores.forEach({jugador => jugador.reiniciarContadores() spawns.anyOne().aparecerJugador(jugador)})
 	game.addVisual(marcoFondo)
 	game.addVisual(minutero1)
 	game.addVisual(minutero2)
@@ -35,7 +35,7 @@ object screenManagement {
 	game.addVisual(segundero2)
 	game.addVisual(logoMenu)
 	game.addVisual(contadorInicio)
-        game.addVisual(estrella)
+    game.addVisual(estrella)
 	game.addVisual(charcoLodo)
 	/* 
 	game.addVisual(digito1R)

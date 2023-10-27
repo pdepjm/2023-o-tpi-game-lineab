@@ -3,6 +3,7 @@ import direcciones.*
 import Sonidos.*
 import celdas.*
 import spawns.*
+import reloj.*
 
 const jugadores = [jugadorRojo, jugadorAzul, jugadorVerde]
 
@@ -14,14 +15,24 @@ const jugadorVerde = new Jugador(nombre="jugadorVerde", image="jugadorVerde.jpg"
 
 
 class Jugador{
+
 	var property position = game.at(6,6)
 	var property mira = quieto 
-	var image //= "enojado.jpg"
 	var puedeMoverse = false
+	var puedeSuicidarse = true
+	
+	var image //= "enojado.jpg"
+	
 	const cuello = #{}
 	var terreno = #{}
+	
 	const property nombre
-	var puedeSuicidarse = true
+	
+	var kills = 0
+	
+	var tiempoSobrevivido = 120
+	
+	
 	//MOVIMIENTOS
 	
 	method image() = image
@@ -103,6 +114,7 @@ class Jugador{
 		cuello.clear()
 		game.removeVisual(self)
 		terreno.clear()
+		self.reiniciarContadores()
 		spawns.anyOne().reaparecerJugador(self)
 	}
 	
@@ -115,6 +127,7 @@ class Jugador{
 	method matar(ladron){
 		game.sound("kill" + (numSonid.anyOne()).toString() + ".mp3").play()
 		ladron.terreno().forEach({celda => celda.cambiarDuenio(self)})
+		kills += 1
 		ladron.morir()
 	}
 	
@@ -123,6 +136,18 @@ class Jugador{
 	    game.schedule(1000, {game.removeTickEvent("AumentarVelocidad")})
 	}
 	*/
+
+   //ESTADISTICAS
+   
+   method reiniciarContadores(){
+   	kills = 0
+   	tiempoSobrevivido = reloj.tiempoRestante()
+   }
+   
+   method kills() = kills
+   
+   method tiempoSobrevivido() = tiempoSobrevivido
+   
 }
 
 
