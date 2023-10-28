@@ -39,7 +39,7 @@ object reloj {
 	}
 	
 	method iniciarContador() {
-		tiempoRestante = 120
+		tiempoRestante = 10//120
 		color = "amarillo"
 	}
 	
