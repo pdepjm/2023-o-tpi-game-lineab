@@ -51,7 +51,7 @@ object killer{
 	var killer
 	var kills
 	
-	method image() = "statKiller_" + killer.nombre().toString() + ".png"
+	method image() = "statKiller_" + killer.nombre() + ".png"
    
     method position() = game.at(22,8)
    
@@ -88,7 +88,7 @@ object sobreviviente{
 	var sobreviviente
 	var tiempoSobrevivido
 	
-	method image() = "statSobreviviente_" + sobreviviente.nombre().toString() + ".png"
+	method image() = "statSobreviviente_" + sobreviviente.nombre() + ".png"
    
    method position() = game.at(49,8)
    
@@ -113,11 +113,11 @@ object sobreviviente{
     	}
 }
 
-const minuteroTiempoSobr = new ContadorStat(posX = 52, posY = 8)
+const minuteroTiempoSobr = new ContadorStat(posX = 51, posY = 8)
 
-const segunderoTiempoSobr1 = new ContadorStat(posX = 54, posY = 8)
+const segunderoTiempoSobr1 = new ContadorStat(posX = 53, posY = 8)
 
-const segunderoTiempoSobr2 = new ContadorStat(posX = 55, posY = 8)
+const segunderoTiempoSobr2 = new ContadorStat(posX = 54, posY = 8)
 
 
 class ContadorStat{

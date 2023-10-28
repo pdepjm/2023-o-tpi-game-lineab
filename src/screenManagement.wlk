@@ -224,6 +224,6 @@ object barraWinner{
 	const property image =  "ganador" + (jugadores.max{jugador=>jugador.terreno().size()}) . nombre() + ".png"
 }
 object fondoMenuFinal{
-	const property position = game.at(9,7)
+	const property position = game.at(20,7)
 	const property image = "menuFinalPartida.png"
 }
