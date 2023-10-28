@@ -37,11 +37,16 @@ object screenManagement {
 	game.addVisual(contadorInicio)
     game.addVisual(estrella)
 	game.addVisual(charcoLodo)
-	/* 
-	game.addVisual(digito1R)
-	game.addVisual(digito2R)
-	game.addVisual(digito3R)
-	game.addVisual(digito4R)*/
+	game.addVisual(fondoRanking)
+	game.addVisual(fotoJugadorRojo)
+	game.addVisual(fotoJugadorAzul)
+	game.addVisual(fotoJugadorVerde)	
+	game.addVisual(digito1Rojo)
+	game.addVisual(digito1Azul)
+	game.addVisual(digito1Verde)
+	game.addVisual(digito2Rojo)
+	game.addVisual(digito2Azul)
+	game.addVisual(digito2Verde)
 	contadorInicio.iniciar()
 	//game.onTick(500, "Animacion Jugador", {jugadores.forEach({jugador => jugador.cambiarImagen()})})
 	game.schedule(3000,{
@@ -180,7 +185,11 @@ object marcoFondo {
 	method position() = game.at(0,0)
 }
 
-//MENU INSTRUCCIONES
+object fondoRanking{
+	method image()="fondoRanking.png"
+	method position() = game.at(1,31)
+	
+}//MENU INSTRUCCIONES
 
 
 
@@ -212,9 +221,8 @@ object barraTiempoOut{
 
 object barraWinner{
 	const property position = game.at(-1,4)
-	const property image = "barraWinner.png"
+	const property image =  "ganador" + (jugadores.max{jugador=>jugador.terreno().size()}) . nombre() + ".png"
 }
-
 object fondoMenuFinal{
 	const property position = game.at(9,7)
 	const property image = "menuFinalPartida.png"

@@ -3,35 +3,45 @@ import celdas.*
 import wollok.game.*
 import players.*
 
-/* 
-object rankingManager {
-	method porcentajeCeldas(jugador)= ((celdas.filter{celda=>celda.duenio()==jugador}).size() * 100) . div(408)
-	
+class FotoJugador{
+	var position
+	var jugador
+	method position()=position
+	method image() = "ranking_" +  jugador . nombre()+ ".png"
+	}
+
+class Digito{
+	var jugador
+	const property position
+	method image()
+}
+class Digito1R inherits Digito{
+	override method image() = "ranking" + (rankingManager.porcentajeCeldas(jugador) . div(10)) . toString() + ".png"
 }
 
-object fotoJugador{
-	const property position = game.at(0,16)
-	method image() = "jugadorRojo.png"
+class Digito2R inherits Digito{
+	override method image() = "ranking" + (rankingManager.porcentajeCeldas(jugador) %10) .toString() +  ".png"
+}
+
+object rankingManager {
+	method porcentajeCeldas(jugador)= ((jugador.terreno().size()) * 100) . div(408)
 	}
 	
-object digito1R{
-	const property position = game.at(1,16) 
-	method image() = "ranking("  + (rankingManager.porcentajeCeldas(jugadorRojo) . div(100)) . toString() + ").png"
-}
+const fotoJugadorRojo = new FotoJugador (position=game.at(1,31), jugador=jugadorRojo)
+const fotoJugadorAzul = new FotoJugador (position=game.at(5,31), jugador=jugadorAzul)
+const fotoJugadorVerde = new FotoJugador (position=game.at(9,31), jugador=jugadorVerde)
+const digito1Rojo = new Digito1R (jugador=jugadorRojo, position=game.at(2,31))
+const digito1Azul = new Digito1R (jugador=jugadorAzul, position=game.at(6,31))
+const digito1Verde = new Digito1R (jugador=jugadorVerde, position=game.at(10,31))
+const digito2Rojo = new Digito2R (jugador=jugadorRojo, position=game.at(3,31))
+const digito2Azul = new Digito2R (jugador=jugadorAzul, position=game.at(7,31))
+const digito2Verde = new Digito2R (jugador=jugadorVerde, position=game.at(11,31))
 
-object digito2R{
-	const property position = game.at(2,16) 
-	method image() = "ranking" + (rankingManager.porcentajeCeldas(jugadorRojo) . div(10)) . toString() + ".png"
-}
 
-object digito3R{
-	const property position = game.at(3,16) 
-	method image() = "ranking" + (rankingManager.porcentajeCeldas(jugadorRojo) %10) .toString() +  ".png"
-}
 
-object digito4R{
-	const property position = game.at(5,16) 
-	method image() = "rankingPorcentaje.png"
+/* 
+class Digito3R inherits Digito{
+	override method image() = "rankingPorcentaje.png"
 }*/
 
 
