@@ -103,7 +103,7 @@ class Jugador{
 	method suicidarse(){
 		if(puedeSuicidarse){
 		game.sound("suicidio" + (numSonid.anyOne()).toString() + ".mp3").play()
-		terreno.forEach({celda => celda.cambiarDuenio(neutral)})
+		terreno.forEach({celda => celda.desadueniar()})
 		self.morir()}
 	}
 	
@@ -113,7 +113,6 @@ class Jugador{
 		cuello.forEach({celda => celda.desrobar()})
 		cuello.clear()
 		game.removeVisual(self)
-		terreno.clear()
 		self.reiniciarContadores()
 		spawns.anyOne().reaparecerJugador(self)
 	}
@@ -130,6 +129,8 @@ class Jugador{
 		kills += 1
 		ladron.morir()
 	}
+	
+	method desrobar(celda) = cuello.remove(celda)
 	
 	/*method aumentarVelocidad(){
 		game.onTick(200,"AumentarVelocidad", {jugador => jugador.moverYAccionarCelda()})

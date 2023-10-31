@@ -52,9 +52,16 @@ class Celda{
     }
     
     method desrobar(){
-    	ladron = neutral
+    	ladron.desrobar(self)
     	estanRobando = false
+    	ladron = neutral
     	image = "celda_" + duenio.nombre() + ".png"
+    	
+    }
+    
+    method desadueniar(){
+    	if(!estanRobando){ image = "celda_neutral.png"} // si estaba siendo robada por mas que el duenio muera la imagen seguira siendo el cuello del ladron
+        duenio = neutral 
     }
 }
 
@@ -115,6 +122,7 @@ object neutral{ //Es un objeto de la clase Jugador???
 	method agregarCuello(celda){}
 	method nombre()="neutral"
 	method morir(){}
+	method desrobar(celda){}
 }
 
 //2
