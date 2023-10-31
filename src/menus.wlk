@@ -93,7 +93,7 @@ object managerMenuFinal{
 	method accionar(){
 		sonido.stopMusicaMenuFinal()
 		if(menuFinalSelect.modo() == 0){
-			managerGeneral.iniciarPartida()
+			managerGeneral.cargarPartida()
 		}else if(menuFinalSelect.modo() == 1){ 
 			managerGeneral.configMenuInicial()
 		}else{

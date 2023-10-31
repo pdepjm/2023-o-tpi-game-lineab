@@ -6,6 +6,7 @@ import celdas.*
 import players.*
 import spawns.*
 import menus.*
+import reloj.*
 
 object managerGeneral{
 	
@@ -50,6 +51,8 @@ object managerGeneral{
 	
 	method cargarPartida(){
 		game.clear()
+		reloj.iniciarContador()
+		contadorInicio.estadoInicial()
 		screenManagement.cargarPartida() 
 		celdasManager.inicializarPartida()
 	}
