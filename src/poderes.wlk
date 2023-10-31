@@ -13,9 +13,9 @@ class Poder {
     method image() = image
     
 	method movete() { //para que se aparezca en una posicion random
-    const x = 0.randomUpTo(game.width()).truncate(0)  
-    const y = 0.randomUpTo(game.height()).truncate(0)
+    const x = 10.randomUpTo(game.width()- 10).truncate(0)  
+    const y = 10.randomUpTo(game.height()- 10).truncate(0)
     position = game.at(x,y)
     }
     }
-   
+ 
