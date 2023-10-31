@@ -24,7 +24,7 @@ class Digito2R inherits Digito{
 }
 
 object rankingManager {
-	method porcentajeCeldas(jugador)= ((jugador.terreno().size()) * 100) . div(408)
+	method porcentajeCeldas(jugador)= ((jugador.terreno().size()) * 100) . div(532)
 	}
 	
 const fotoJugadorRojo = new FotoJugador (position=game.at(1,31), jugador=jugadorRojo)

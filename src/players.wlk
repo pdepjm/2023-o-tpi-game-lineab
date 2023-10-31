@@ -142,6 +142,7 @@ class Jugador{
    method reiniciarContadores(){
    	kills = 0
    	tiempoSobrevivido = reloj.tiempoRestante()
+    terreno.clear()
    }
    
    method kills() = kills
