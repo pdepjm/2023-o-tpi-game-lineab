@@ -47,12 +47,27 @@ class Jugador{
 		
 	method cambiarMira(direc){mira = direc}
 	
-	method moverYAccionarCelda(){
-		if(puedeMoverse){
-	  mira.desplazar(self)
-	  celdasManager.celda(self.position().x(), self.position().y()).interactuarCelda(self)
-	  }
-	  }
+
+method moverYAccionarCelda() {
+    if (puedeMoverse) {
+        mira.desplazar(self)
+        celdasManager.celda(self.position().x(), self.position().y()).interactuarCelda(self)
+
+        // Verificar colisión con estrella
+        if (self.position().x() == estrella.position().x() && self.position().y() == estrella.position().y()) {
+            self.aumentarVelocidad()
+            // Además, mueve la estrella a una nueva posición aleatoria
+            estrella.movete()
+        }
+
+        // Verificar colisión con charco de lodo
+        if (self.position().x() == charcoLodo.position().x() && self.position().y() == charcoLodo.position().y()) {
+            self.disminuirVelocidad()
+            // Además, mueve el charco de lodo a una nueva posición aleatoria
+            charcoLodo.movete()
+        }
+    }
+}
 	
 	method moverNorte() {
 		position = position.up(2)
