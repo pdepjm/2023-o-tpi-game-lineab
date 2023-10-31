@@ -4,6 +4,7 @@ import Sonidos.*
 import celdas.*
 import spawns.*
 import reloj.*
+import poderes.* 
 
 const jugadores = [jugadorRojo, jugadorAzul, jugadorVerde]
 
@@ -20,7 +21,7 @@ class Jugador{
 	var property mira = quieto 
 	var puedeMoverse = false
 	var puedeSuicidarse = true
-	
+	var property velocidadActual = 2 
 	var image //= "enojado.jpg"
 	
 	const cuello = #{}
@@ -53,7 +54,7 @@ method moverYAccionarCelda() {
         mira.desplazar(self)
         celdasManager.celda(self.position().x(), self.position().y()).interactuarCelda(self)
 
-        // Verificar colisión con estrella
+  		  // Verificar colisión con estrella
         if (self.position().x() == estrella.position().x() && self.position().y() == estrella.position().y()) {
             self.aumentarVelocidad()
             // Además, mueve la estrella a una nueva posición aleatoria
@@ -147,12 +148,21 @@ method moverYAccionarCelda() {
 	
 	method desrobar(celda) = cuello.remove(celda)
 	
-	/*method aumentarVelocidad(){
-		game.onTick(200,"AumentarVelocidad", {jugador => jugador.moverYAccionarCelda()})
+	 method aumentarVelocidad(){
+		game.onTick(100,"AumentarVelocidad", {jugador => jugador.moverYAccionarCelda()})
 	    game.schedule(1000, {game.removeTickEvent("AumentarVelocidad")})
 	}
-	*/
 
+	method disminuirVelocidad() {
+        const nuevaVelocidad = velocidadActual / 2 
+        velocidadActual = nuevaVelocidad
+    }
+    /* 
+    method aumentarVelocidad() {
+        const nuevaVelocidad = velocidadActual * 2 
+        velocidadActual = nuevaVelocidad
+    } 
+*/
    //ESTADISTICAS
    
    method reiniciarContadores(){
@@ -166,5 +176,7 @@ method moverYAccionarCelda() {
    method tiempoSobrevivido() = tiempoSobrevivido
    
 }
+
+
 
 
