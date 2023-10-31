@@ -69,13 +69,13 @@ object screenManagement {
 		game.removeVisual(segundero2)
 		game.addVisual(fondoTimeOut)
 		game.addVisual(timeOut)
-		game.schedule(3000 , {game.removeVisual(barraTiempoOut) game.addVisual(barraWinner)})
+		game.schedule(3000 , {game.removeVisual(barraTiempoOut) barraWinner.mostrarGanador()})
 		game.schedule(7500, {self.configMenuFinal()})
 	}
 	
 	method configMenuFinal(){
 		game.removeVisual(barraWinner)
-	    game.addVisual(fondoMenuFinal)
+		podio.mostrarPodio()
 	    game.addVisual(menuFinalSelect)
 	    sobreviviente.mostrarSobreviviente()
 	    killer.mostrarKiller()
@@ -175,12 +175,29 @@ object barraTiempoOut{
 }
 
 object barraWinner{
+	var ganador 
 	const property position = game.at(-1,4)
-	const property image =  "ganador" + (jugadores.max{jugador=>jugador.terreno().size()}) . nombre() + ".png"
+	method image() =  "ganador" + ganador + ".png"
+	method establecerGanador(){
+		ganador = (jugadores.max{jugador=>jugador.terreno().size()}).nombre() 
+	}
+	method mostrarGanador(){
+		self.establecerGanador()
+		game.addVisual(self)
+	}
 }
-object fondoMenuFinal{
-	const ganador = (jugadores.max{jugador=>jugador.terreno().size()}).nombre()
-	const tercero = (jugadores.min{jugador=>jugador.terreno().size()}).nombre()
+object podio{
+	var ganador
+	var tercero
 	const property position = game.at(20,7)
-	const property image = ganador + "_" + tercero +".png"
+	method image() = ganador + "_" + tercero + ".png"
+	
+	method establecerPodio(){
+	 ganador = (jugadores.max{jugador=>jugador.terreno().size()}).nombre()
+	 tercero = (jugadores.min{jugador=>jugador.terreno().size()}).nombre()
+	}
+	method mostrarPodio(){
+    		self.establecerPodio()
+    		game.addVisual(self)
+    }	
 }
