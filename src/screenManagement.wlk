@@ -11,23 +11,19 @@ import poderes.*
 import estadisticas.*
 
 object screenManagement {
-	method configurarInicio(){
-	game.width(80)
-	game.height(35)
-	game.cellSize(20)
-	game.boardGround("fondoCeldas.png")
-	}
 	
 	method configuarMenuInicial(){
-	game.clear()
 	game.addVisual(fondoNegro)
 	game.addVisual(fondoMenuInicio)
 	game.addVisual(menuSelect)
 	}
 	
+	method cargarPartida(){
+		game.addVisual(pantallaCarga)
+	}
+	
 	method configPartida(){
     pantallaCarga.desaparecer()
-	jugadores.forEach({jugador => jugador.reiniciarContadores() spawns.anyOne().aparecerJugador(jugador)})
 	game.addVisual(marcoFondo)
 	game.addVisual(minutero1)
 	game.addVisual(minutero2)
@@ -47,8 +43,6 @@ object screenManagement {
 	game.addVisual(digito2Rojo)
 	game.addVisual(digito2Azul)
 	game.addVisual(digito2Verde)
-	contadorInicio.iniciar()
-	//game.onTick(500, "Animacion Jugador", {jugadores.forEach({jugador => jugador.cambiarImagen()})})
 	game.schedule(3000,{
 		game.removeVisual(contadorInicio)
 		contadorInicio.estadoInicial()
@@ -58,32 +52,17 @@ object screenManagement {
 		game.onTick(200,"Mover a los Jugadores", {jugadores.forEach({jugador => jugador.moverYAccionarCelda()})})
 		game.onTick(1000, "Actualizar Reloj", {reloj.avanzarTiempo()})
 		})
-	game.onTick(7000, "aumentar velocidad", {estrella.movete()})
-	game.onTick(7000, "disminuir velocidad", {charcoLodo.movete()})
-	//game.whenCollideDo(estrella, {jugador => jugador.aumentarVelocidad()})
-	//game.whenCollideDo(charcoLodo, {jugador => jugador.disminuirVelocidad()})
 	}
 	
 
 	method configInstrucciones(){
-	game.clear()
-	menuInstrucciones.reiniciarSeleccionado()
 	game.addVisual(menuInstrucciones)
 	// PARA LA SECUENCIA DE IMAGENES DENTRO DE LAS INTRUCCIONES
-	tutoriales.transicion()
 	game.addVisual(tutoriales)
 	}
 	
 	method configCreditos(){
-	game.clear()
 	game.addVisual(menuCreditos)
-	}
-
-	method cerrarJuego(){
-		game.clear()
-		game.width(1)
-	    game.height(1)
-	    game.cellSize(1)
 	}
 	
 	method terminarPartida(){

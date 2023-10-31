@@ -1,7 +1,7 @@
 
 
 import wollok.game.*
-import screenManagement.*
+import managerGeneral.*
 import Sonidos.*
 import teclado.*
 
@@ -22,9 +22,7 @@ object menuInstrucciones {
 	method image() = "MenuInstrucciones" + self.modo().toString() +".png"
 	
 	method volverAlMenu() {
-		screenManagement.configuarMenuInicial()
-		sonido.configInicio()
-		teclado.configInicio()
+		managerGeneral.configMenuInicial()
 		sonido.stopmusicains()
 	}
 	
@@ -37,7 +35,7 @@ object tutoriales {
 	const property position = game.at(14,7)
 	method sumarx() {x = x+1}
 	method restox() = x%12
-	method image() = "tutorial"+menuInstrucciones.modo().toString()+self.restox()+".png"
+	method image() = "tutorial"+ menuInstrucciones.modo().toString()+self.restox()+".png"
 	method transicion() {game.onTick(1000,"transicion",{self.sumarx()})}
 }
 

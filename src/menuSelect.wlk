@@ -1,10 +1,5 @@
 import wollok.game.*
-import screenManagement.*
-import Sonidos.*
-import teclado.*
-import reloj.*
-import celdas.*
-import players.*
+import managerGeneral.*
 
 object menuSelect{
 	var seleccionado = 0
@@ -25,35 +20,14 @@ object managerMenuInicio{
 	
 	method accionar(){
 		if(menuSelect.modo() == 3){
-			screenManagement.cerrarJuego()
+			managerGeneral.cerrarJuego()
 		}else if(menuSelect.modo() == 2){
-			self.mostrarCreditos()
+			managerGeneral.mostrarCreditos()
 		}else if(menuSelect.modo() == 1){
-			self.mostrarInstrucciones()
+			managerGeneral.mostrarInstrucciones()
 		}else{
-			game.clear()
-			game.addVisual(pantallaCarga)
-			celdasManager.inicializarPartida()
+			managerGeneral.cargarPartida()
 		}
 	}
-	
-	method iniciarPartida(){
-		//jugadoresManagement.inicializarJugadores()
-		screenManagement.configPartida()
-		sonido.iniciarPartida()
-		teclado.configPartida() 
-		reloj.iniciarContador() 
-	}
-	
-	method mostrarCreditos(){
-		screenManagement.configCreditos()
-		teclado.configCreditos()
-		sonido.configCreditos()
-	}
-	
-	method mostrarInstrucciones(){
-		screenManagement.configInstrucciones()
-		teclado.configInstrucciones()
-		sonido.configInstrucciones()
-	}
 }
+	

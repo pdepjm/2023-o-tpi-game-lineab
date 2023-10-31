@@ -4,6 +4,7 @@ import Sonidos.*
 import teclado.*
 import reloj.*
 import celdas.*
+import managerGeneral.*
 
 object menuFinalSelect{
 	var seleccionado = 0
@@ -25,23 +26,11 @@ object managerMenuFinal{
 	method accionar(){
 		sonido.stopMusicaMenuFinal()
 		if(menuFinalSelect.modo() == 0){
-			self.reiniciarPartida()
+			managerGeneral.iniciarPartida()
 		}else if(menuFinalSelect.modo() == 1){ 
-			self.volverAlMenu()
+			managerGeneral.configMenuInicial()
 		}else{
-			screenManagement.cerrarJuego()
+			managerGeneral.cerrarJuego()
 		}
-		}
-		
-		method reiniciarPartida(){
-			game.clear()
-			game.addVisual(pantallaCarga)
-			celdasManager.inicializarPartida()
-		}
-		
-		method volverAlMenu(){
-			screenManagement.configuarMenuInicial()
-	        sonido.configInicio()
-	        teclado.configInicio()
-		}
-		}
+	}
+}

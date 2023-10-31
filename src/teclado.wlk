@@ -6,7 +6,7 @@ import direcciones.*
 import menuFinalPartida.*
 import menuInstrucciones.*
 import menuCreditos.*
-import screenManagement.*
+
 
 object teclado {
 	method configInicio(){

@@ -4,7 +4,6 @@ import players.*
 //de que estos no se pasen de los limites
 // y de que no puedan darse vuelta instantaneamente
 
-
 object norte {
 	method desplazar(jugador){
 		if(jugador.position().y() < 27) {

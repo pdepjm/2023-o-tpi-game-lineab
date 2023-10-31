@@ -1,5 +1,6 @@
 import wollok.game.*
-import menuSelect.*
+import players.*
+import managerGeneral.*
 import screenManagement.*
 
 const celdas = []
@@ -97,7 +98,7 @@ object celdasManager{
         game.removeTickEvent("Inicializando Celdas")
         i = 2 //Reinicia los contadores para cuando se reinicia la partida
         j = 2
-        managerMenuInicio.iniciarPartida()
+        managerGeneral.iniciarPartida()
     }
     }
 

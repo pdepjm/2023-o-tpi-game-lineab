@@ -1,4 +1,3 @@
-
 import celdas.*
 import wollok.game.*
 import players.*
@@ -15,6 +14,7 @@ class Digito{
 	const property position
 	method image()
 }
+
 class Digito1R inherits Digito{
 	override method image() = "ranking" + (rankingManager.porcentajeCeldas(jugador) . div(10)) . toString() + ".png"
 }

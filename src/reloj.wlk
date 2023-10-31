@@ -3,6 +3,7 @@ import screenManagement.*
 import teclado.*
 import Sonidos.*
 import players.*
+import managerGeneral.*
 
 const posOut = game.at(82,37)
 
@@ -19,7 +20,7 @@ object reloj {
 		 	 tiempoRestante -= 1
 		 	 color = "rojo"
 		 	 sonido.cuentaRegresivaFinal()
-		  	 game.schedule(4900,{self.finalizarPartida()})
+		  	 game.schedule(4900,{managerGeneral.finalizarPartida()})
 		  	 }
 	}
 	
@@ -28,15 +29,6 @@ object reloj {
 	method segundos() = tiempoRestante - self.minutos()*60
 	method segundos1() = self.segundos().div(10)
 	method segundos2() = self.segundos() % 10
-	
-	method finalizarPartida(){
-		jugadores.forEach({jugador => jugador.puedeMoverse(false)})
-		game.removeTickEvent("Actualizar Reloj")
-		game.removeTickEvent("Mover a los Jugadores")
-		screenManagement.terminarPartida()
-		game.schedule(7450, {teclado.configFinal()})
-		sonido.configFinalPartida()
-	}
 	
 	method iniciarContador() {
 		tiempoRestante = 120

@@ -2,14 +2,11 @@ import wollok.game.*
 import screenManagement.*
 import Sonidos.*
 import teclado.*
+import managerGeneral.*
  
 program land_thio{
-
-	game.title("land.io")	
-	screenManagement.configurarInicio()
-	screenManagement.configuarMenuInicial()
-	sonido.configInicio()
-	teclado.configInicio()
-	game.start()
+    managerGeneral.configurarJuego()
+    managerGeneral.configMenuInicial()
+    game.start()
 }
  

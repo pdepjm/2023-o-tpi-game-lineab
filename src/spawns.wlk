@@ -44,6 +44,3 @@ class Spawn {
 	const spawn4 = new Spawn(posCentralX = 16, posCentralY = 26)
 	const spawn5 = new Spawn(posCentralX = 58, posCentralY = 26)
     const spawn6 = new Spawn(posCentralX = 74, posCentralY = 14)
-
-object spawnsManager{
-}

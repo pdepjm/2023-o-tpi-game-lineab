@@ -1,5 +1,5 @@
 import wollok.game.*
-import screenManagement.*
+import managerGeneral.*
 import Sonidos.*
 import teclado.*
 
@@ -18,9 +18,7 @@ object menuCreditos {
 	method image() = "cande.png"
 	
 		method volverAlMenu() {
-		screenManagement.configuarMenuInicial()
-		sonido.configInicio()
-		teclado.configInicio()
+		managerGeneral.configMenuInicial()
 		sonido.stopmusicaCreditos()
 	}
 }
