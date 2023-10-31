@@ -32,6 +32,7 @@ class Jugador{
 	
 	var tiempoSobrevivido = 120
 	
+	var consultadas = #{}
 	
 	//MOVIMIENTOS
 	
@@ -148,6 +149,21 @@ class Jugador{
    
    method tiempoSobrevivido() = tiempoSobrevivido
    
+   //Rellenar
+   
+   method consulto(celda){
+   	consultadas.add(celda)
+   	}
+   
+   method vaciarConsultadas(){
+   	consultadas.clear()
+   }
+   
+   method completar(){
+   	consultadas.forEach({celda => celda.cambiarDuenio(self)})
+   	consultadas.clear()
+   }
 }
+
 
 

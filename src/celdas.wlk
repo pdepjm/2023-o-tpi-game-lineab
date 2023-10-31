@@ -7,14 +7,22 @@ const celdas = []
 class Celda{
     const posX
     const posY
-    
+
     var property duenio = neutral
-    var estanRobando = false 
+    var property estanRobando = false 
     var ladron = neutral
     var property image = "celda_neutral.png"
+    
+    method celdaSup()= celdasManager.celda(posX+2,posY+2)
+    method celdaInf()= celdasManager.celda(posX-2,posY-2)
+    method celdaDer()= celdasManager.celda(posX+2,posY-2)
+    method celdaIzq()= celdasManager.celda(posX-2,posY+2)
 
+	method estanRobando() = estanRobando
+	method duenio()=duenio
+	
     method position() = game.at(posX, posY)
-     
+ 
     method estanRobando(_valor){
     	estanRobando = _valor
     } 
@@ -32,7 +40,7 @@ class Celda{
     			self.robadaPor(jugador)
     		}else{
     			jugador.adueniarseCuello()
-    			//rellenar
+    			self.rellenar(jugador)
     		}
     	}
     }   
@@ -56,10 +64,62 @@ class Celda{
     	estanRobando = false
     	image = "celda_" + duenio.nombre() + ".png"
     }
+    
+    method rellenar(jugador){
+    celdasManager.celda(posX+2,posY+2).intentarRellenar(jugador)
+    celdasManager.celda(posX-2,posY-2).intentarRellenar(jugador)
+    celdasManager.celda(posX+2,posY-2).intentarRellenar(jugador)
+    celdasManager.celda(posX-2,posY+2).intentarRellenar(jugador)
+    }
+    
+    method intentarRellenar(jugador){
+    	if(duenio != jugador || self.estaCruzada(jugador)){
+    		self.completar(jugador)
+    	}
+    }
+
+    method estaCruzada(jugador) = self.algunaSupEsMia(jugador) && self.algunaInfEsMia(jugador) && self.algunaDerEsMia(jugador) && self.algunaIzqEsMia(jugador)
+    
+    method algunaSupEsMia(jugador) = self.esMia(jugador) || self.celdaSup().algunaSupEsMia(jugador) 
+    method algunaInfEsMia(jugador) = self.esMia(jugador) || self.celdaSup().algunaInfEsMia(jugador)
+    method algunaDerEsMia(jugador) = self.esMia(jugador) || self.celdaSup().algunaDerEsMia(jugador) 
+    method algunaIzqEsMia(jugador) = self.esMia(jugador) || self.celdaSup().algunaIzqEsMia(jugador)
+    
+    method esMia(jugador) = duenio == jugador
+    
+    method completar(jugador){
+    	if(self.estaRodeada(jugador)){
+    	jugador.completar()
+    	}else{
+    		jugador.vaciarConsultadas()
+    	}
+    }   
+   
+    method estaRodeada(jugador){
+    jugador.consulto(self)
+    return self.esMia(jugador) || (self.celdaSup().estaRodeada(jugador) && self.celdaInf().estaRodeada(jugador) && self.celdaDer().estaRodeada(jugador) && self.celdaIzq().estaRodeada(jugador))       
+ }
 }
 
 class CeldaBorde inherits Celda{
-	//comportamiento distinto en el chequeo de si esta rodeada de un color
+	override method estaRodeada(jugador) = duenio == jugador
+	
+	override method celdaSup() = self
+	override method celdaInf() = self
+	override method celdaDer() = self
+	override method celdaIzq() = self
+	
+	override method estaCruzada(jugador) = false
+	
+	//////
+	override method algunaSupEsMia(jugador) = self.esMia(jugador)  
+    override method algunaInfEsMia(jugador) = self.esMia(jugador) 
+    override method algunaDerEsMia(jugador) = self.esMia(jugador)  
+    override method algunaIzqEsMia(jugador) = self.esMia(jugador) 
+    //////
+    
+    override method intentarRellenar(jugador){}
+    override method rellenar(jugador){}
 }
 
 object celdasManager{
@@ -113,7 +173,7 @@ object neutral{ //Es un objeto de la clase Jugador???
 	method matar(ladron){}
 	method adueniarseCuello(){}
 	method agregarCuello(celda){}
-	method nombre()="neutral"
+	method nombre() = "neutral"
 	method morir(){}
 }
 
