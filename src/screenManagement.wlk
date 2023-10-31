@@ -167,26 +167,6 @@ object fondoRanking{
 }//MENU INSTRUCCIONES
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //FINAL PARTIDA
 
 object barraTiempoOut{
@@ -199,6 +179,8 @@ object barraWinner{
 	const property image =  "ganador" + (jugadores.max{jugador=>jugador.terreno().size()}) . nombre() + ".png"
 }
 object fondoMenuFinal{
+	const ganador = (jugadores.max{jugador=>jugador.terreno().size()}).nombre()
+	const tercero = (jugadores.min{jugador=>jugador.terreno().size()}).nombre()
 	const property position = game.at(20,7)
-	const property image = "menuFinalPartida.png"
+	const property image = ganador + "_" + tercero +".png"
 }

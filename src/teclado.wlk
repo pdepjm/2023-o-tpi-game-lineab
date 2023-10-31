@@ -3,6 +3,7 @@ import Sonidos.*
 import players.*
 import direcciones.*
 import menus.*
+import screenManagement.*
 
 
 object teclado {
