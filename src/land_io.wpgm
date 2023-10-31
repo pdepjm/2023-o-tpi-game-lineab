@@ -1,7 +1,4 @@
 import wollok.game.*
-import screenManagement.*
-import Sonidos.*
-import teclado.*
 import managerGeneral.*
  
 program land_thio{

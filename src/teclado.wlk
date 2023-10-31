@@ -1,11 +1,8 @@
 import wollok.game.*
 import Sonidos.*
-import menuSelect.*
 import players.*
 import direcciones.*
-import menuFinalPartida.*
-import menuInstrucciones.*
-import menuCreditos.*
+import menus.*
 
 
 object teclado {

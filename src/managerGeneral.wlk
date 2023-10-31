@@ -5,7 +5,7 @@ import screenManagement.*
 import celdas.*
 import players.*
 import spawns.*
-import menuInstrucciones.*
+import menus.*
 
 object managerGeneral{
 	

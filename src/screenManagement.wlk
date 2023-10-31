@@ -1,15 +1,11 @@
 import wollok.game.*
-import menuSelect.*
 import players.*
 import reloj.*
-import menuFinalPartida.*
-import menuInstrucciones.*
-import menuCreditos.*
 import celdas.*
 import spawns.*
 import poderes.*
 import estadisticas.*
-
+import menus.*
 object screenManagement {
 	
 	method configuarMenuInicial(){
