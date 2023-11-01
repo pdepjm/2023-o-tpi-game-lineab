@@ -53,23 +53,8 @@ method moverYAccionarCelda() {
     if (puedeMoverse) {
         mira.desplazar(self)
         celdasManager.celda(self.position().x(), self.position().y()).interactuarCelda(self)
-
-  		  // Verificar colisión con estrella
-        if (self.position().x() == estrella.position().x() && self.position().y() == estrella.position().y()) {
-            self.aumentarVelocidad()
-            // Además, mueve la estrella a una nueva posición aleatoria
-            estrella.movete()
-        }
-
-        // Verificar colisión con charco de lodo
-        if (self.position().x() == charcoLodo.position().x() && self.position().y() == charcoLodo.position().y()) {
-            self.disminuirVelocidad()
-            // Además, mueve el charco de lodo a una nueva posición aleatoria
-            charcoLodo.movete()
-        }
-    }
 }
-	
+	}
 	method moverNorte() {
 		position = position.up(2)
 		}
@@ -146,23 +131,8 @@ method moverYAccionarCelda() {
 		ladron.morir()
 	}
 	
-	method desrobar(celda) = cuello.remove(celda)
-	
-	 method aumentarVelocidad(){
-		game.onTick(100,"AumentarVelocidad", {jugador => jugador.moverYAccionarCelda()})
-	    game.schedule(1000, {game.removeTickEvent("AumentarVelocidad")})
-	}
+	method desrobar(celda) = cuello.remove(celda) 
 
-	method disminuirVelocidad() {
-        const nuevaVelocidad = velocidadActual / 2 
-        velocidadActual = nuevaVelocidad
-    }
-    /* 
-    method aumentarVelocidad() {
-        const nuevaVelocidad = velocidadActual * 2 
-        velocidadActual = nuevaVelocidad
-    } 
-*/
    //ESTADISTICAS
    
    method reiniciarContadores(){
