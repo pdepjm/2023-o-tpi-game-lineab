@@ -19,8 +19,6 @@ class Jugador{
 	var property position = game.at(6,6)
 	var property mira = quieto 
 	var puedeMoverse = false
-	var puedeSuicidarse = true
-	var property velocidadActual = 2 
 	var image //= "enojado.jpg"
 	
 	const cuello = #{}
