@@ -29,6 +29,7 @@ object screenManagement {
 	game.addVisual(contadorInicio)
     game.addVisual(estrella)
 	game.addVisual(charcoLodo)
+	game.addVisual(marcoRanking)
 	game.addVisual(fondoRanking)
 	game.addVisual(fotoJugadorRojo)
 	game.addVisual(fotoJugadorAzul)
@@ -39,6 +40,9 @@ object screenManagement {
 	game.addVisual(digito2Rojo)
 	game.addVisual(digito2Azul)
 	game.addVisual(digito2Verde)
+	game.addVisual(porcentaje1)
+	game.addVisual(porcentaje2)
+	game.addVisual(porcentaje3)
 	game.schedule(3000,{
 		game.removeVisual(contadorInicio)
 		contadorInicio.estadoInicial()
@@ -167,11 +171,18 @@ object marcoFondo {
 	method position() = game.at(0,0)
 }
 
+object marcoRanking{
+	method image()="marcoRanking.png"
+	method position() = game.at(10,31)}
+	
 object fondoRanking{
 	method image()="fondoRanking.png"
-	method position() = game.at(1,31)
+	method position() = game.at(10,31)
 	
-}//MENU INSTRUCCIONES
+}
+
+
+//MENU INSTRUCCIONES
 
 
 //FINAL PARTIDA

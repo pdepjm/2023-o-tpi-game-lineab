@@ -2,19 +2,12 @@ import celdas.*
 import wollok.game.*
 import players.*
 
-class FotoJugador{
-	var position
-	var jugador
-	method position()=position
-	method image() = "ranking_" +  jugador . nombre()+ ".png"
-	}
 
 class Digito{
 	var jugador
 	const property position
 	method image()
 }
-
 class Digito1R inherits Digito{
 	override method image() = "ranking" + (rankingManager.porcentajeCeldas(jugador) . div(10)) . toString() + ".png"
 }
@@ -26,23 +19,30 @@ class Digito2R inherits Digito{
 object rankingManager {
 	method porcentajeCeldas(jugador)= ((jugador.terreno().size()) * 100) . div(532)
 	}
+
+class FotoJugador inherits Digito{
+	override method image() = "ranking_" +  jugador . nombre()+ ".png"
+	}
+
+class Porcentaje {
+	var position
+	method position()=position
+	method image() = "rankingPorcentaje.png"}
 	
-const fotoJugadorRojo = new FotoJugador (position=game.at(1,31), jugador=jugadorRojo)
-const fotoJugadorAzul = new FotoJugador (position=game.at(5,31), jugador=jugadorAzul)
-const fotoJugadorVerde = new FotoJugador (position=game.at(9,31), jugador=jugadorVerde)
-const digito1Rojo = new Digito1R (jugador=jugadorRojo, position=game.at(2,31))
-const digito1Azul = new Digito1R (jugador=jugadorAzul, position=game.at(6,31))
-const digito1Verde = new Digito1R (jugador=jugadorVerde, position=game.at(10,31))
-const digito2Rojo = new Digito2R (jugador=jugadorRojo, position=game.at(3,31))
-const digito2Azul = new Digito2R (jugador=jugadorAzul, position=game.at(7,31))
-const digito2Verde = new Digito2R (jugador=jugadorVerde, position=game.at(11,31))
+const fotoJugadorRojo = new FotoJugador (position=game.at(10,31), jugador=jugadorRojo)
+const fotoJugadorAzul = new FotoJugador (position=game.at(15,31), jugador=jugadorAzul)
+const fotoJugadorVerde = new FotoJugador (position=game.at(20,31), jugador=jugadorVerde)
+const digito1Rojo = new Digito1R (jugador=jugadorRojo, position=game.at(11,31))
+const digito1Azul = new Digito1R (jugador=jugadorAzul, position=game.at(16,31))
+const digito1Verde = new Digito1R (jugador=jugadorVerde, position=game.at(21,31))
+const digito2Rojo = new Digito2R (jugador=jugadorRojo, position=game.at(12,31))
+const digito2Azul = new Digito2R (jugador=jugadorAzul, position=game.at(17,31))
+const digito2Verde = new Digito2R (jugador=jugadorVerde, position=game.at(22,31))
+const porcentaje1 = new Porcentaje(position=game.at(13,31))
+const porcentaje2 = new Porcentaje(position=game.at(18,31))
+const porcentaje3 = new Porcentaje(position=game.at(23,31))
 
 
-
-/* 
-class Digito3R inherits Digito{
-	override method image() = "rankingPorcentaje.png"
-}*/
 
 
 //ESTADISTICAS FINAL PARTIDA
