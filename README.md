@@ -13,9 +13,12 @@
 (agregar)
 
 ## Reglas de Juego / Instrucciones
+![diagrama estatico](https://github.com/pdepjm/2023-o-tpi-game-lineab/assets/129525589/ee6da6ee-b41a-4fed-bb3a-d9b046240808)
 
 (Escribirlas)
 
+## Diagramas Estaticos
+![diagrama estatico]
 
 ## Otros
 
