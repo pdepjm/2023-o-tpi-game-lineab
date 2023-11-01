@@ -12,7 +12,7 @@ class Menu{
 	var seleccionado = 0
 	const property position
 	method seleccionado() = seleccionado
-	method modo() = seleccionado%3
+	method modo() = seleccionado%4
 	method sumarSeleccionado(num){
 		seleccionado += num
 	}
