@@ -4,7 +4,6 @@ import Sonidos.*
 import celdas.*
 import spawns.*
 import reloj.*
-import poderes.* 
 
 const jugadores = [jugadorRojo, jugadorAzul, jugadorVerde]
 
