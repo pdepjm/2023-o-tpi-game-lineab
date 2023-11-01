@@ -26,8 +26,6 @@ object screenManagement {
 	game.addVisual(segundero2)
 	game.addVisual(logoMenu)
 	game.addVisual(contadorInicio)
-    game.addVisual(estrella)
-	game.addVisual(charcoLodo)
 	game.addVisual(marcoRanking)
 	game.addVisual(fondoRanking)
 	game.addVisual(fotoJugadorRojo)
