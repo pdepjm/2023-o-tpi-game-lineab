@@ -3,7 +3,6 @@ import players.*
 import reloj.*
 import celdas.*
 import spawns.*
-import poderes.*
 import estadisticas.*
 import menus.*
 object screenManagement {
