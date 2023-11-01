@@ -14,12 +14,12 @@
 ![Captura de pantalla 2023-11-01 205124](https://github.com/pdepjm/2023-o-tpi-game-lineab/assets/129525369/ed123373-561c-47e9-b5ca-f95d3e130cf1)
 
 ## Reglas de Juego / Instrucciones
-![diagrama estatico](https://github.com/pdepjm/2023-o-tpi-game-lineab/assets/129525589/ee6da6ee-b41a-4fed-bb3a-d9b046240808)
+
 
 (Escribirlas)
 
 ## Diagramas Estaticos
-![diagrama estatico]
+![diagrama estatico](https://github.com/pdepjm/2023-o-tpi-game-lineab/assets/129525589/ee6da6ee-b41a-4fed-bb3a-d9b046240808)
 
 ## Otros
 
