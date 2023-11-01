@@ -52,12 +52,7 @@ object screenManagement {
 		game.onTick(200,"Mover a los Jugadores", {jugadores.forEach({jugador => jugador.moverYAccionarCelda()})})
 		game.onTick(1000, "Actualizar Reloj", {reloj.avanzarTiempo()})
 		})
-		game.onTick(7000, "moverEstrella", { estrella.movete() })
-		game.onTick(7000, "moverCharcoLodo", { charcoLodo.movete() })
-		game.whenCollideDo(estrella, { jugador => jugador.aumentarVelocidad()
-       		estrella.movete()})
-		game.whenCollideDo(charcoLodo, { jugador => jugador.disminuirVelocidad()
-        	charcoLodo.movete()})
+	
 
 	}
 	
