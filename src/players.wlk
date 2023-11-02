@@ -19,6 +19,8 @@ class Jugador{
 	var property position = game.at(6,6)
 	var property mira = quieto 
 	var puedeMoverse = false
+	var puedeSuicidarse = true
+	
 	var image //= "enojado.jpg"
 	
 	const cuello = #{}
@@ -45,13 +47,13 @@ class Jugador{
 		
 	method cambiarMira(direc){mira = direc}
 	
-
-method moverYAccionarCelda() {
-    if (puedeMoverse) {
-        mira.desplazar(self)
-        celdasManager.celda(self.position().x(), self.position().y()).interactuarCelda(self)
-}
-	}
+	method moverYAccionarCelda(){
+		if(puedeMoverse){
+	  mira.desplazar(self)
+	  celdasManager.celda(self.position().x(), self.position().y()).interactuarCelda(self)
+	  }
+	  }
+	
 	method moverNorte() {
 		position = position.up(2)
 		}
@@ -128,7 +130,7 @@ method moverYAccionarCelda() {
 		ladron.morir()
 	}
 	
-	method desrobar(celda) = cuello.remove(celda) 
+	method desrobar(celda) = cuello.remove(celda)
 
    //ESTADISTICAS
    
@@ -143,7 +145,5 @@ method moverYAccionarCelda() {
    method tiempoSobrevivido() = tiempoSobrevivido
    
 }
-
-
 
 

@@ -26,10 +26,10 @@ object screenManagement {
 	game.addVisual(segundero2)
 	game.addVisual(logoMenu)
 	game.addVisual(contadorInicio)
-	game.addVisual(marcoRanking)
 	game.addVisual(fondoRanking)
 	game.addVisual(fotoJugadorRojo)
 	game.addVisual(fotoJugadorAzul)
+	game.addVisual(marcoRanking)
 	game.addVisual(fotoJugadorVerde)	
 	game.addVisual(digito1Rojo)
 	game.addVisual(digito1Azul)
@@ -37,20 +37,18 @@ object screenManagement {
 	game.addVisual(digito2Rojo)
 	game.addVisual(digito2Azul)
 	game.addVisual(digito2Verde)
-	game.addVisual(porcentaje1)
-	game.addVisual(porcentaje2)
-	game.addVisual(porcentaje3)
 	game.schedule(3000,{
 		game.removeVisual(contadorInicio)
 		contadorInicio.estadoInicial()
+		game.addVisual(porcentaje1)
+	    game.addVisual(porcentaje2)
+	    game.addVisual(porcentaje3)
 		game.addVisual(goInicio)
 		game.schedule(1000, {game.removeVisual(goInicio)})
 		jugadores.forEach({jugador => jugador.puedeMoverse(true)})
 		game.onTick(200,"Mover a los Jugadores", {jugadores.forEach({jugador => jugador.moverYAccionarCelda()})})
 		game.onTick(1000, "Actualizar Reloj", {reloj.avanzarTiempo()})
 		})
-	
-
 	}
 	
 
@@ -153,27 +151,25 @@ object goInicio{
 	method image() = "goInicio.png"
 }
 
-object logoMenu {
+object logoMenu{
 	method image() = "logotipoMenu.png"
 	method position() = game.at(75,32)
 }
 
-object marcoFondo {
+object marcoFondo{
 	method image() = "marcoPartida_" + reloj.color() + ".png" //el marco del reloj esta incluido en el marco violeta, por eso depende del color del reloj
 	method position() = game.at(0,0)
 }
 
+object fondoRanking{
+	method image()="fondoRanking.png"
+	method position() = game.at(10,31)
+}
+	
 object marcoRanking{
 	method image()="marcoRanking.png"
 	method position() = game.at(10,31)}
 	
-object fondoRanking{
-	method image()="fondoRanking.png"
-	method position() = game.at(10,31)
-	
-}
-
-
 //MENU INSTRUCCIONES
 
 
