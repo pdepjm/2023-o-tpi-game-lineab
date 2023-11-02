@@ -3,17 +3,16 @@ import managerGeneral.*
 import Sonidos.*
 import teclado.*
 
-const menuFinalSelect = new MenuFinalSelect(cantOpciones = 3, position=game.at(20,7))
-const menuCreditos = new MenuCreditos(cantOpciones = 1, position = game.at(0,0))  
-const menuInstrucciones = new MenuInstrucciones(cantOpciones = 3, position = game.at(0,0))
-const menuSelect = new MenuSelect(cantOpciones = 4, position = game.at(24,12))
+const menuFinalSelect = new MenuFinalSelect(position=game.at(20,7))
+const menuCreditos = new MenuCreditos(position = game.at(0,0))  
+const menuInstrucciones = new MenuInstrucciones(position = game.at(0,0))
+const menuSelect = new MenuSelect(position = game.at(24,12))
 
 class Menu{
 	var seleccionado = 0
-	const cantOpciones
 	const property position
 	method seleccionado() = seleccionado
-	method modo() = seleccionado%cantOpciones
+	method modo() = seleccionado%3
 	method sumarSeleccionado(num){
 		seleccionado += num
 	}
