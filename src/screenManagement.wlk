@@ -26,10 +26,10 @@ object screenManagement {
 	game.addVisual(segundero2)
 	game.addVisual(logoMenu)
 	game.addVisual(contadorInicio)
+	game.addVisual(marcoRanking)
 	game.addVisual(fondoRanking)
 	game.addVisual(fotoJugadorRojo)
 	game.addVisual(fotoJugadorAzul)
-	game.addVisual(marcoRanking)
 	game.addVisual(fotoJugadorVerde)	
 	game.addVisual(digito1Rojo)
 	game.addVisual(digito1Azul)
@@ -40,9 +40,6 @@ object screenManagement {
 	game.schedule(3000,{
 		game.removeVisual(contadorInicio)
 		contadorInicio.estadoInicial()
-		game.addVisual(porcentaje1)
-	    game.addVisual(porcentaje2)
-	    game.addVisual(porcentaje3)
 		game.addVisual(goInicio)
 		game.schedule(1000, {game.removeVisual(goInicio)})
 		jugadores.forEach({jugador => jugador.puedeMoverse(true)})
@@ -142,7 +139,7 @@ object contadorInicio{
 		game.schedule(2900, {game.removeTickEvent("contadorInicio")})
 	}
 	
-	method estadoInicial(){ contador = 3}
+	method estadoInicial(){contador = 3}
 	
 }
 
@@ -170,8 +167,6 @@ object marcoRanking{
 	method image()="marcoRanking.png"
 	method position() = game.at(10,31)}
 	
-//MENU INSTRUCCIONES
-
 
 //FINAL PARTIDA
 
@@ -200,10 +195,12 @@ object podio{
 	
 	method establecerPodio(){
 	 ganador = (jugadores.max{jugador=>jugador.terreno().size()}).nombre()
-	 tercero = (jugadores.min{jugador=>jugador.terreno().size()}).nombre()
+	 tercero = (jugadores.reverse().min{jugador=>jugador.terreno().size()}).nombre()
 	}
 	method mostrarPodio(){
     		self.establecerPodio()
     		game.addVisual(self)
     }	
 }
+
+
