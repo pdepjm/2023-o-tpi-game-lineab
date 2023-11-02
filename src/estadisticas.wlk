@@ -38,9 +38,7 @@ const digito1Verde = new Digito1R (jugador=jugadorVerde, position=game.at(21,31)
 const digito2Rojo = new Digito2R (jugador=jugadorRojo, position=game.at(12,31))
 const digito2Azul = new Digito2R (jugador=jugadorAzul, position=game.at(17,31))
 const digito2Verde = new Digito2R (jugador=jugadorVerde, position=game.at(22,31))
-const porcentaje1 = new Porcentaje(position=game.at(13,31))
-const porcentaje2 = new Porcentaje(position=game.at(18,31))
-const porcentaje3 = new Porcentaje(position=game.at(23,31))
+
 
 
 

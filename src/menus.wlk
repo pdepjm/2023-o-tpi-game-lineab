@@ -20,7 +20,7 @@ class Menu{
 }
 
 class MenuCreditos inherits Menu{
-	override method image() = "cande.png"
+	override method image() = "creditos.png"
 	
 	method volverAlMenu() {
 		managerGeneral.configMenuInicial()
