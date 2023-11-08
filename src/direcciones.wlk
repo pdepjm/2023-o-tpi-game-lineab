@@ -4,58 +4,68 @@ import players.*
 //de que estos no se pasen de los limites
 // y de que no puedan darse vuelta instantaneamente
 
-object norte {
-	method desplazar(jugador){
-		if(jugador.position().y() < 27) {
-			jugador.moverNorte()
-			jugador.puedeSuicidarse(true)
-			}
-		else {jugador.puedeSuicidarse(false)}
+class Direccion {
+	method desplazarSiCorresponde(jugador){
+		if (self.estaDentroDelLimite(jugador)){ 
+		self.desplazar(jugador)
+		jugador.puedeSuicidarse(true)
+		}else{
+		jugador.puedeSuicidarse(false)
+	    }
+	 }
+	 
+    method estaDentroDelLimite(jugador)
+	
+	method desplazar(jugador)
+}
+
+class Norte inherits Direccion{
+	override method estaDentroDelLimite(jugador) = jugador.position().y() < 27
+	
+	override method desplazar(jugador){
+		jugador.moverNorte()
 	}
-	method opuesto() = sur	
+    
+    method opuesto() = sur
 }
 
-object sur {	
-	method desplazar(jugador){
-		if(jugador.position().y() > 2) {
-			jugador.moverSur()
-			jugador.puedeSuicidarse(true)
-			}
-		else {jugador.puedeSuicidarse(false)}
-		
-	}	
+class Sur inherits Direccion{
+	override method estaDentroDelLimite(jugador) = jugador.position().y() > 2
 	
-	method opuesto() = norte	
+	override method desplazar(jugador){
+		jugador.moverSur()
+	}
+    
+    method opuesto() = norte
 }
 
-object este {
-	method desplazar(jugador){
-		if(jugador.position().x() < 75) {
-			jugador.moverEste()
-			jugador.puedeSuicidarse(true)
-			}
-		else {jugador.puedeSuicidarse(false)}
-		
-	}	
+class Este inherits Direccion{
+	override method estaDentroDelLimite(jugador) = jugador.position().x() < 75
 	
-	method opuesto() = oeste	
+	override method desplazar(jugador){
+		jugador.moverEste()
+	}
+    
+    method opuesto() = oeste
 }
 
-object oeste {
-	method desplazar(jugador){
-		if(jugador.position().x() > 2) {
-			jugador.moverOeste()
-			jugador.puedeSuicidarse(true)
-			}
-		else {jugador.puedeSuicidarse(false)}
-		
-	}	
+class Oeste inherits Direccion{
+	override method estaDentroDelLimite(jugador) = jugador.position().x() > 2
 	
-	method opuesto() = este	
+	override method desplazar(jugador){
+		jugador.moverOeste()
+	}
+    
+    method opuesto() = este
 }
+
+const norte = new Norte()
+const sur = new Sur() 
+const este = new Este()
+const oeste = new Oeste()
 
 object quieto {
-		method desplazar(jugador) = jugador.puedeSuicidarse(false)
+		method desplazarSiCorresponde(jugador) = jugador.puedeSuicidarse(false)
 		
 		method opuesto() = self   //quieto no tiene opuesto 		
 }

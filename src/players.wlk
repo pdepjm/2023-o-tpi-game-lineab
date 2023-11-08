@@ -49,7 +49,7 @@ class Jugador{
 	
 	method moverYAccionarCelda(){
 		if(puedeMoverse){
-	  mira.desplazar(self)
+	  mira.desplazarSiCorresponde(self)
 	  celdasManager.celda(self.position().x(), self.position().y()).interactuarCelda(self)
 	  }
 	  }
